@@ -1,4 +1,0 @@
-test/defect/4_112.bmp
-test/defect/3_140.bmp
-test/defect/2_71.bmp
-test/defect/1_107.bmp

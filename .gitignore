@@ -30,7 +30,9 @@ adpretrain_bridge/wandb/
 adpretrain_bridge/lightning_logs/
 adpretrain_bridge/pbs/*.out
 adpretrain_bridge/pbs/*.err
-
+adpretrain_bridge/archive/
+adpretrain_bridge/_archive/
+adpretrain_bridge/splits/
 # Generated PBS can be tracked selectively if needed.
 # Keep generated_run/generated_submit ignored by default, unless a task submission needs archival.
 adpretrain_bridge/pbs/generated_run/

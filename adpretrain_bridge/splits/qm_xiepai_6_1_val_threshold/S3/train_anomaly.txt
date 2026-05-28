@@ -1,5 +1,0 @@
-val/defect/1_54.bmp
-val/defect/1_57.bmp
-val/defect/1_59.bmp
-val/defect/1_60.bmp
-val/defect/1_67.bmp

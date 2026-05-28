@@ -1,1 +1,0 @@
-# full_original_plain_n139 Metrics\n\n| Precision | Recall | F1 | Accuracy | AUC-ROC | AUC-PR | Threshold |\n| ---: | ---: | ---: | ---: | ---: | ---: | ---: |\n| 0.8182 | 0.7500 | 0.7826 | 0.8750 | 0.9058 | 0.8375 | 0.359331 |\n

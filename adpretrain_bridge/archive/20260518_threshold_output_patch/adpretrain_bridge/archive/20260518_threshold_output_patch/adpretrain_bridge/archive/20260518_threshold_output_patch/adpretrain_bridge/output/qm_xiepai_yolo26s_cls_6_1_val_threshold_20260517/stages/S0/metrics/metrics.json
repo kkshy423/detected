@@ -1,9 +1,0 @@
-{
-  "stage": "S0",
-  "status": "skipped",
-  "reason": "YOLO supervised training requires at least one anomaly sample.",
-  "train_counts": {
-    "normal": 50,
-    "anomaly": 0
-  }
-}

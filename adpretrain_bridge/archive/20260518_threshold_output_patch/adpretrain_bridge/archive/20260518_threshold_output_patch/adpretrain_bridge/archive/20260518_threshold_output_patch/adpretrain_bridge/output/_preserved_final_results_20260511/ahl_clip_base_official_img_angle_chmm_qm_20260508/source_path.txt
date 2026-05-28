@@ -1,1 +1,0 @@
-/ghome/huangjd/code/detected/adpretrain_bridge/output/ahl_clip_base_official_img_angle_chmm_qm_20260508
