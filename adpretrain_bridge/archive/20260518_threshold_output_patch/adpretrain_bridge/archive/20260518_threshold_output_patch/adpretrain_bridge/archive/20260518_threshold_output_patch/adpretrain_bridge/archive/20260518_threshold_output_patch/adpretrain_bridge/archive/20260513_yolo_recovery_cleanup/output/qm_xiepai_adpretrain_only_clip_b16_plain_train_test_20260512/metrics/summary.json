@@ -1,0 +1,320 @@
+{
+  "status": "ok",
+  "results": [
+    {
+      "stage": "S0",
+      "status": "ok",
+      "method": "adpretrain_only_cache_feature_norm",
+      "feature_cache": "/gdata1/huangjd/data/xidun_qm_xiepai_adpretrain_clip_b16_fewshot_cache/plain_official_img_angle",
+      "source_class_root": "/gdata1/huangjd/data/xidun_mvtec_format/models__球面斜拍",
+      "split_root": "/ghome/huangjd/code/detected/adpretrain_bridge/splits/qm_xiepai_fewshot_train_test",
+      "score_rule": "mean of feature and feature_scale patch L2-norm maps; image score is top-k mean",
+      "topk": 1,
+      "primary_policy": "adpretrain_eval_best_f1",
+      "primary": {
+        "threshold": 0.7185705304145813,
+        "accuracy": 0.89,
+        "precision": 0.8166666666666667,
+        "recall": 0.8166666666666667,
+        "f1": 0.8166666666666667,
+        "source_precision_recall_curve_f1": 0.8166666666661666
+      },
+      "auc_roc": 0.9094047619047618,
+      "auc_pr": 0.8254604012006134,
+      "test_counts": {
+        "normal": 140,
+        "anomaly": 60
+      },
+      "train_counts": {
+        "normal": 50,
+        "anomaly": 0
+      },
+      "adpretrain_training": "not_run; official CLIP-B16 projected residual feature cache is reused",
+      "notes": [
+        "This is a no-AHL baseline from the same feature cache used by plain AHL.",
+        "Scores do not use stage labels; stages are repeated for table alignment with AHL.",
+        "Precision/Recall/F1 use the same fixed-test best-F1 policy as the AHL train/test-only reports."
+      ]
+    },
+    {
+      "stage": "S1",
+      "status": "ok",
+      "method": "adpretrain_only_cache_feature_norm",
+      "feature_cache": "/gdata1/huangjd/data/xidun_qm_xiepai_adpretrain_clip_b16_fewshot_cache/plain_official_img_angle",
+      "source_class_root": "/gdata1/huangjd/data/xidun_mvtec_format/models__球面斜拍",
+      "split_root": "/ghome/huangjd/code/detected/adpretrain_bridge/splits/qm_xiepai_fewshot_train_test",
+      "score_rule": "mean of feature and feature_scale patch L2-norm maps; image score is top-k mean",
+      "topk": 1,
+      "primary_policy": "adpretrain_eval_best_f1",
+      "primary": {
+        "threshold": 0.7185705304145813,
+        "accuracy": 0.89,
+        "precision": 0.8166666666666667,
+        "recall": 0.8166666666666667,
+        "f1": 0.8166666666666667,
+        "source_precision_recall_curve_f1": 0.8166666666661666
+      },
+      "auc_roc": 0.9094047619047618,
+      "auc_pr": 0.8254604012006134,
+      "test_counts": {
+        "normal": 140,
+        "anomaly": 60
+      },
+      "train_counts": {
+        "normal": 100,
+        "anomaly": 1
+      },
+      "adpretrain_training": "not_run; official CLIP-B16 projected residual feature cache is reused",
+      "notes": [
+        "This is a no-AHL baseline from the same feature cache used by plain AHL.",
+        "Scores do not use stage labels; stages are repeated for table alignment with AHL.",
+        "Precision/Recall/F1 use the same fixed-test best-F1 policy as the AHL train/test-only reports."
+      ]
+    },
+    {
+      "stage": "S2",
+      "status": "ok",
+      "method": "adpretrain_only_cache_feature_norm",
+      "feature_cache": "/gdata1/huangjd/data/xidun_qm_xiepai_adpretrain_clip_b16_fewshot_cache/plain_official_img_angle",
+      "source_class_root": "/gdata1/huangjd/data/xidun_mvtec_format/models__球面斜拍",
+      "split_root": "/ghome/huangjd/code/detected/adpretrain_bridge/splits/qm_xiepai_fewshot_train_test",
+      "score_rule": "mean of feature and feature_scale patch L2-norm maps; image score is top-k mean",
+      "topk": 1,
+      "primary_policy": "adpretrain_eval_best_f1",
+      "primary": {
+        "threshold": 0.7185705304145813,
+        "accuracy": 0.89,
+        "precision": 0.8166666666666667,
+        "recall": 0.8166666666666667,
+        "f1": 0.8166666666666667,
+        "source_precision_recall_curve_f1": 0.8166666666661666
+      },
+      "auc_roc": 0.9094047619047618,
+      "auc_pr": 0.8254604012006134,
+      "test_counts": {
+        "normal": 140,
+        "anomaly": 60
+      },
+      "train_counts": {
+        "normal": 150,
+        "anomaly": 3
+      },
+      "adpretrain_training": "not_run; official CLIP-B16 projected residual feature cache is reused",
+      "notes": [
+        "This is a no-AHL baseline from the same feature cache used by plain AHL.",
+        "Scores do not use stage labels; stages are repeated for table alignment with AHL.",
+        "Precision/Recall/F1 use the same fixed-test best-F1 policy as the AHL train/test-only reports."
+      ]
+    },
+    {
+      "stage": "S3",
+      "status": "ok",
+      "method": "adpretrain_only_cache_feature_norm",
+      "feature_cache": "/gdata1/huangjd/data/xidun_qm_xiepai_adpretrain_clip_b16_fewshot_cache/plain_official_img_angle",
+      "source_class_root": "/gdata1/huangjd/data/xidun_mvtec_format/models__球面斜拍",
+      "split_root": "/ghome/huangjd/code/detected/adpretrain_bridge/splits/qm_xiepai_fewshot_train_test",
+      "score_rule": "mean of feature and feature_scale patch L2-norm maps; image score is top-k mean",
+      "topk": 1,
+      "primary_policy": "adpretrain_eval_best_f1",
+      "primary": {
+        "threshold": 0.7185705304145813,
+        "accuracy": 0.89,
+        "precision": 0.8166666666666667,
+        "recall": 0.8166666666666667,
+        "f1": 0.8166666666666667,
+        "source_precision_recall_curve_f1": 0.8166666666661666
+      },
+      "auc_roc": 0.9094047619047618,
+      "auc_pr": 0.8254604012006134,
+      "test_counts": {
+        "normal": 140,
+        "anomaly": 60
+      },
+      "train_counts": {
+        "normal": 200,
+        "anomaly": 5
+      },
+      "adpretrain_training": "not_run; official CLIP-B16 projected residual feature cache is reused",
+      "notes": [
+        "This is a no-AHL baseline from the same feature cache used by plain AHL.",
+        "Scores do not use stage labels; stages are repeated for table alignment with AHL.",
+        "Precision/Recall/F1 use the same fixed-test best-F1 policy as the AHL train/test-only reports."
+      ]
+    },
+    {
+      "stage": "S4",
+      "status": "ok",
+      "method": "adpretrain_only_cache_feature_norm",
+      "feature_cache": "/gdata1/huangjd/data/xidun_qm_xiepai_adpretrain_clip_b16_fewshot_cache/plain_official_img_angle",
+      "source_class_root": "/gdata1/huangjd/data/xidun_mvtec_format/models__球面斜拍",
+      "split_root": "/ghome/huangjd/code/detected/adpretrain_bridge/splits/qm_xiepai_fewshot_train_test",
+      "score_rule": "mean of feature and feature_scale patch L2-norm maps; image score is top-k mean",
+      "topk": 1,
+      "primary_policy": "adpretrain_eval_best_f1",
+      "primary": {
+        "threshold": 0.7185705304145813,
+        "accuracy": 0.89,
+        "precision": 0.8166666666666667,
+        "recall": 0.8166666666666667,
+        "f1": 0.8166666666666667,
+        "source_precision_recall_curve_f1": 0.8166666666661666
+      },
+      "auc_roc": 0.9094047619047618,
+      "auc_pr": 0.8254604012006134,
+      "test_counts": {
+        "normal": 140,
+        "anomaly": 60
+      },
+      "train_counts": {
+        "normal": 300,
+        "anomaly": 10
+      },
+      "adpretrain_training": "not_run; official CLIP-B16 projected residual feature cache is reused",
+      "notes": [
+        "This is a no-AHL baseline from the same feature cache used by plain AHL.",
+        "Scores do not use stage labels; stages are repeated for table alignment with AHL.",
+        "Precision/Recall/F1 use the same fixed-test best-F1 policy as the AHL train/test-only reports."
+      ]
+    },
+    {
+      "stage": "S5",
+      "status": "ok",
+      "method": "adpretrain_only_cache_feature_norm",
+      "feature_cache": "/gdata1/huangjd/data/xidun_qm_xiepai_adpretrain_clip_b16_fewshot_cache/plain_official_img_angle",
+      "source_class_root": "/gdata1/huangjd/data/xidun_mvtec_format/models__球面斜拍",
+      "split_root": "/ghome/huangjd/code/detected/adpretrain_bridge/splits/qm_xiepai_fewshot_train_test",
+      "score_rule": "mean of feature and feature_scale patch L2-norm maps; image score is top-k mean",
+      "topk": 1,
+      "primary_policy": "adpretrain_eval_best_f1",
+      "primary": {
+        "threshold": 0.7185705304145813,
+        "accuracy": 0.89,
+        "precision": 0.8166666666666667,
+        "recall": 0.8166666666666667,
+        "f1": 0.8166666666666667,
+        "source_precision_recall_curve_f1": 0.8166666666661666
+      },
+      "auc_roc": 0.9094047619047618,
+      "auc_pr": 0.8254604012006134,
+      "test_counts": {
+        "normal": 140,
+        "anomaly": 60
+      },
+      "train_counts": {
+        "normal": 400,
+        "anomaly": 20
+      },
+      "adpretrain_training": "not_run; official CLIP-B16 projected residual feature cache is reused",
+      "notes": [
+        "This is a no-AHL baseline from the same feature cache used by plain AHL.",
+        "Scores do not use stage labels; stages are repeated for table alignment with AHL.",
+        "Precision/Recall/F1 use the same fixed-test best-F1 policy as the AHL train/test-only reports."
+      ]
+    },
+    {
+      "stage": "S6",
+      "status": "ok",
+      "method": "adpretrain_only_cache_feature_norm",
+      "feature_cache": "/gdata1/huangjd/data/xidun_qm_xiepai_adpretrain_clip_b16_fewshot_cache/plain_official_img_angle",
+      "source_class_root": "/gdata1/huangjd/data/xidun_mvtec_format/models__球面斜拍",
+      "split_root": "/ghome/huangjd/code/detected/adpretrain_bridge/splits/qm_xiepai_fewshot_train_test",
+      "score_rule": "mean of feature and feature_scale patch L2-norm maps; image score is top-k mean",
+      "topk": 1,
+      "primary_policy": "adpretrain_eval_best_f1",
+      "primary": {
+        "threshold": 0.7185705304145813,
+        "accuracy": 0.89,
+        "precision": 0.8166666666666667,
+        "recall": 0.8166666666666667,
+        "f1": 0.8166666666666667,
+        "source_precision_recall_curve_f1": 0.8166666666661666
+      },
+      "auc_roc": 0.9094047619047618,
+      "auc_pr": 0.8254604012006134,
+      "test_counts": {
+        "normal": 140,
+        "anomaly": 60
+      },
+      "train_counts": {
+        "normal": 500,
+        "anomaly": 40
+      },
+      "adpretrain_training": "not_run; official CLIP-B16 projected residual feature cache is reused",
+      "notes": [
+        "This is a no-AHL baseline from the same feature cache used by plain AHL.",
+        "Scores do not use stage labels; stages are repeated for table alignment with AHL.",
+        "Precision/Recall/F1 use the same fixed-test best-F1 policy as the AHL train/test-only reports."
+      ]
+    },
+    {
+      "stage": "S7",
+      "status": "ok",
+      "method": "adpretrain_only_cache_feature_norm",
+      "feature_cache": "/gdata1/huangjd/data/xidun_qm_xiepai_adpretrain_clip_b16_fewshot_cache/plain_official_img_angle",
+      "source_class_root": "/gdata1/huangjd/data/xidun_mvtec_format/models__球面斜拍",
+      "split_root": "/ghome/huangjd/code/detected/adpretrain_bridge/splits/qm_xiepai_fewshot_train_test",
+      "score_rule": "mean of feature and feature_scale patch L2-norm maps; image score is top-k mean",
+      "topk": 1,
+      "primary_policy": "adpretrain_eval_best_f1",
+      "primary": {
+        "threshold": 0.7185705304145813,
+        "accuracy": 0.89,
+        "precision": 0.8166666666666667,
+        "recall": 0.8166666666666667,
+        "f1": 0.8166666666666667,
+        "source_precision_recall_curve_f1": 0.8166666666661666
+      },
+      "auc_roc": 0.9094047619047618,
+      "auc_pr": 0.8254604012006134,
+      "test_counts": {
+        "normal": 140,
+        "anomaly": 60
+      },
+      "train_counts": {
+        "normal": 560,
+        "anomaly": 80
+      },
+      "adpretrain_training": "not_run; official CLIP-B16 projected residual feature cache is reused",
+      "notes": [
+        "This is a no-AHL baseline from the same feature cache used by plain AHL.",
+        "Scores do not use stage labels; stages are repeated for table alignment with AHL.",
+        "Precision/Recall/F1 use the same fixed-test best-F1 policy as the AHL train/test-only reports."
+      ]
+    },
+    {
+      "stage": "S8",
+      "status": "ok",
+      "method": "adpretrain_only_cache_feature_norm",
+      "feature_cache": "/gdata1/huangjd/data/xidun_qm_xiepai_adpretrain_clip_b16_fewshot_cache/plain_official_img_angle",
+      "source_class_root": "/gdata1/huangjd/data/xidun_mvtec_format/models__球面斜拍",
+      "split_root": "/ghome/huangjd/code/detected/adpretrain_bridge/splits/qm_xiepai_fewshot_train_test",
+      "score_rule": "mean of feature and feature_scale patch L2-norm maps; image score is top-k mean",
+      "topk": 1,
+      "primary_policy": "adpretrain_eval_best_f1",
+      "primary": {
+        "threshold": 0.7185705304145813,
+        "accuracy": 0.89,
+        "precision": 0.8166666666666667,
+        "recall": 0.8166666666666667,
+        "f1": 0.8166666666666667,
+        "source_precision_recall_curve_f1": 0.8166666666661666
+      },
+      "auc_roc": 0.9094047619047618,
+      "auc_pr": 0.8254604012006134,
+      "test_counts": {
+        "normal": 140,
+        "anomaly": 60
+      },
+      "train_counts": {
+        "normal": 560,
+        "anomaly": 139
+      },
+      "adpretrain_training": "not_run; official CLIP-B16 projected residual feature cache is reused",
+      "notes": [
+        "This is a no-AHL baseline from the same feature cache used by plain AHL.",
+        "Scores do not use stage labels; stages are repeated for table alignment with AHL.",
+        "Precision/Recall/F1 use the same fixed-test best-F1 policy as the AHL train/test-only reports."
+      ]
+    }
+  ]
+}

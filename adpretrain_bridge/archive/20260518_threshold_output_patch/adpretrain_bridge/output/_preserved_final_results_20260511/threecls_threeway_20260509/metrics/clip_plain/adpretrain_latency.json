@@ -1,0 +1,26 @@
+[
+  {
+    "class": "models_clip_official_effective_plain",
+    "real_class": "models",
+    "samples": 30,
+    "warmup": 5,
+    "clip_feature_ms": 21.409759670495987,
+    "chmm_affine_ms": null
+  },
+  {
+    "class": "qiusai_clip_official_effective_plain",
+    "real_class": "qiusai",
+    "samples": 30,
+    "warmup": 5,
+    "clip_feature_ms": 22.145988643169403,
+    "chmm_affine_ms": null
+  },
+  {
+    "class": "yuanzhu_clip_official_effective_plain",
+    "real_class": "yuanzhu",
+    "samples": 30,
+    "warmup": 5,
+    "clip_feature_ms": 20.38840964436531,
+    "chmm_affine_ms": null
+  }
+]

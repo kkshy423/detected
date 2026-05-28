@@ -1,0 +1,23 @@
+{
+  "stage": "S1",
+  "method": "YOLO26s-cls validation-threshold baseline",
+  "model": "/ghome/huangjd/code/detected/adpretrain_bridge/yolo26s-cls.pt",
+  "data_root": "/gdata1/huangjd/data/yolo_qm_xiepai_6_1_cls_val_threshold_20260517/S1",
+  "output_stage": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_yolo26s_cls_6_1_val_threshold_20260517/stages/S1",
+  "epochs": 200,
+  "imgsz": 224,
+  "batch": 16,
+  "device": "0",
+  "workers": 4,
+  "seed": 20260517,
+  "patience": 50,
+  "primary_policy": "val_best_f1",
+  "counts": {
+    "train_normal": 100,
+    "train_anomaly": 1,
+    "val_normal": 105,
+    "val_anomaly": 19,
+    "test_normal": 105,
+    "test_anomaly": 100
+  }
+}

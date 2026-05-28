@@ -1,0 +1,54 @@
+{
+  "dataset_root": "/gdata1/huangjd/data/xidun_threecls_adpretrain_clip_base/chmm_official_effective_draref_e30_20260509",
+  "preferred_cluster_num": 3,
+  "fallback_cluster_num": 2,
+  "min_effective_clusters": 2,
+  "min_cluster_size": 3,
+  "classes": {
+    "models_clip_official_effective_chmm": {
+      "chosen_cluster_num": 3,
+      "reason": "preferred_ok",
+      "preferred": {
+        "file_count": 560,
+        "cluster_num": 3,
+        "counts": [
+          151,
+          186,
+          223
+        ],
+        "effective_clusters": 3
+      },
+      "fallback": null
+    },
+    "qiusai_clip_official_effective_chmm": {
+      "chosen_cluster_num": 3,
+      "reason": "preferred_ok",
+      "preferred": {
+        "file_count": 368,
+        "cluster_num": 3,
+        "counts": [
+          78,
+          156,
+          134
+        ],
+        "effective_clusters": 3
+      },
+      "fallback": null
+    },
+    "yuanzhu_clip_official_effective_chmm": {
+      "chosen_cluster_num": 3,
+      "reason": "preferred_ok",
+      "preferred": {
+        "file_count": 353,
+        "cluster_num": 3,
+        "counts": [
+          177,
+          77,
+          99
+        ],
+        "effective_clusters": 3
+      },
+      "fallback": null
+    }
+  }
+}

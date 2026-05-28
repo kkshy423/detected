@@ -1,0 +1,45 @@
+{
+  "status": "ok",
+  "split_root": "/ghome/huangjd/code/detected/adpretrain_bridge/splits/qm_xiepai_fewshot_train_test",
+  "source_class_root": "/gdata1/huangjd/data/xidun_mvtec_format/models__球面斜拍",
+  "test_normal": 140,
+  "test_anomaly": 60,
+  "stages": {
+    "S0": {
+      "train_normal": 50,
+      "train_anomaly": 0
+    },
+    "S1": {
+      "train_normal": 100,
+      "train_anomaly": 1
+    },
+    "S2": {
+      "train_normal": 150,
+      "train_anomaly": 3
+    },
+    "S3": {
+      "train_normal": 200,
+      "train_anomaly": 5
+    },
+    "S4": {
+      "train_normal": 300,
+      "train_anomaly": 10
+    },
+    "S5": {
+      "train_normal": 400,
+      "train_anomaly": 20
+    },
+    "S6": {
+      "train_normal": 500,
+      "train_anomaly": 40
+    },
+    "S7": {
+      "train_normal": 560,
+      "train_anomaly": 80
+    },
+    "S8": {
+      "train_normal": 560,
+      "train_anomaly": 139
+    }
+  }
+}

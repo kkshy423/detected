@@ -1,0 +1,9 @@
+{
+  "stage": "S0",
+  "status": "skipped",
+  "reason": "YOLO binary supervised classification requires at least one anomaly sample; S0 has none.",
+  "train_counts": {
+    "normal": 50,
+    "anomaly": 0
+  }
+}

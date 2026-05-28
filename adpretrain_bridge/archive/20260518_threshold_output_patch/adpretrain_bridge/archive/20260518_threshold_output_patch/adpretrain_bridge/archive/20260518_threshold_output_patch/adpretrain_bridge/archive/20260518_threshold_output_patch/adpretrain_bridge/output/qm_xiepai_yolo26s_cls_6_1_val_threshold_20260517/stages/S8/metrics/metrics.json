@@ -1,0 +1,118 @@
+{
+  "stage": "S8",
+  "status": "ok",
+  "method": "YOLO26s-cls validation-threshold baseline",
+  "primary_policy": "val_best_f1",
+  "primary": {
+    "threshold": 0.7238742709159851,
+    "accuracy": 0.8731707317073171,
+    "precision": 1.0,
+    "recall": 0.74,
+    "f1": 0.8505747126436781
+  },
+  "threshold_results": {
+    "val_best_f1": {
+      "calibration": {
+        "threshold": 0.7238742709159851,
+        "accuracy": 0.9838709677419355,
+        "precision": 1.0,
+        "recall": 0.8947368421052632,
+        "f1": 0.9444444444444444,
+        "source_precision_recall_curve_f1": 0.9444444444439459
+      },
+      "test": {
+        "threshold": 0.7238742709159851,
+        "accuracy": 0.8731707317073171,
+        "precision": 1.0,
+        "recall": 0.74,
+        "f1": 0.8505747126436781
+      }
+    },
+    "val_normal_p95_0": {
+      "calibration": {
+        "threshold": 0.05920167043805121,
+        "accuracy": 0.9354838709677419,
+        "precision": 0.7391304347826086,
+        "recall": 0.8947368421052632,
+        "f1": 0.8095238095238095
+      },
+      "test": {
+        "threshold": 0.05920167043805121,
+        "accuracy": 0.9073170731707317,
+        "precision": 0.9263157894736842,
+        "recall": 0.88,
+        "f1": 0.9025641025641025
+      }
+    },
+    "val_normal_p97_5": {
+      "calibration": {
+        "threshold": 0.10246309489011736,
+        "accuracy": 0.9596774193548387,
+        "precision": 0.85,
+        "recall": 0.8947368421052632,
+        "f1": 0.8717948717948718
+      },
+      "test": {
+        "threshold": 0.10246309489011736,
+        "accuracy": 0.8926829268292683,
+        "precision": 0.9333333333333333,
+        "recall": 0.84,
+        "f1": 0.8842105263157894
+      }
+    },
+    "val_normal_p99_0": {
+      "calibration": {
+        "threshold": 0.18099832504987678,
+        "accuracy": 0.967741935483871,
+        "precision": 0.8947368421052632,
+        "recall": 0.8947368421052632,
+        "f1": 0.8947368421052632
+      },
+      "test": {
+        "threshold": 0.18099832504987678,
+        "accuracy": 0.8975609756097561,
+        "precision": 0.9647058823529412,
+        "recall": 0.82,
+        "f1": 0.8864864864864864
+      }
+    },
+    "test_best_f1_oracle": {
+      "calibration": {},
+      "test": {
+        "threshold": 0.06219363957643509,
+        "accuracy": 0.9121951219512195,
+        "precision": 0.9361702127659575,
+        "recall": 0.88,
+        "f1": 0.9072164948453608,
+        "source_precision_recall_curve_f1": 0.9072164948448613
+      }
+    }
+  },
+  "auc_roc": 0.9663809523809523,
+  "auc_pr": 0.9708627567240753,
+  "calibration_auc_roc": 0.9869674185463659,
+  "calibration_auc_pr": 0.9589473684210523,
+  "train_counts": {
+    "normal": 490,
+    "anomaly": 80
+  },
+  "calibration_counts": {
+    "normal": 105,
+    "anomaly": 19
+  },
+  "test_counts": {
+    "normal": 105,
+    "anomaly": 100
+  },
+  "score_rule": "YOLO classification probability for the defect class",
+  "defect_class_index": 0,
+  "model_names": {
+    "0": "defect",
+    "1": "good"
+  },
+  "inference_time_ms": 73.28329427940089,
+  "calibration_inference_time_ms": 44.202078284034805,
+  "weights": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_yolo26s_cls_6_1_val_threshold_20260517/stages/S8/ultralytics/train/weights/best.pt",
+  "train_save_dir": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_yolo26s_cls_6_1_val_threshold_20260517/stages/S8/ultralytics/train",
+  "score_file": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_yolo26s_cls_6_1_val_threshold_20260517/stages/S8/metrics/scores.csv"
+}

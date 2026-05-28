@@ -1,0 +1,1 @@
+test/defect/2_54.bmp

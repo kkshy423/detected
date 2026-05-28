@@ -1,0 +1,66 @@
+{
+  "stage": "S1",
+  "status": "ok",
+  "eval_policy": "ADPretrain-style image-level best-F1 on fixed test scores",
+  "primary_policy": "adpretrain_eval_best_f1",
+  "primary": {
+    "threshold": 0.31265436112880707,
+    "accuracy": 0.8,
+    "precision": 0.6724137931034483,
+    "recall": 0.65,
+    "f1": 0.6610169491525424,
+    "source_precision_recall_curve_f1": 0.6610169491520425
+  },
+  "auc_roc": 0.7846428571428571,
+  "auc_pr": 0.6955817258016674,
+  "test_counts": {
+    "normal": 140,
+    "anomaly": 60
+  },
+  "train_counts": {
+    "normal": 100,
+    "anomaly": 1
+  },
+  "threshold_results": {
+    "adpretrain_eval_best_f1": {
+      "threshold": 0.31265436112880707,
+      "accuracy": 0.8,
+      "precision": 0.6724137931034483,
+      "recall": 0.65,
+      "f1": 0.6610169491525424,
+      "source_precision_recall_curve_f1": 0.6610169491520425
+    },
+    "test_normal_p95_0": {
+      "threshold": 0.35327988322824233,
+      "accuracy": 0.82,
+      "precision": 0.8157894736842105,
+      "recall": 0.5166666666666667,
+      "f1": 0.6326530612244898
+    },
+    "test_normal_p97_5": {
+      "threshold": 0.3952661966439337,
+      "accuracy": 0.82,
+      "precision": 0.875,
+      "recall": 0.4666666666666667,
+      "f1": 0.608695652173913
+    },
+    "test_normal_p99_0": {
+      "threshold": 0.4565557993203399,
+      "accuracy": 0.79,
+      "precision": 0.9090909090909091,
+      "recall": 0.3333333333333333,
+      "f1": 0.4878048780487804
+    }
+  },
+  "inference_time_ms": 6.376757025718689,
+  "inference_time_note": "feature-level AHL forward time; excludes CLIP extraction, CHMM affine, and disk I/O",
+  "score_file": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_fewshot_clip_b16_plain_train_test_20260512/stages/S1/metrics/scores.csv",
+  "result_file": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_fewshot_clip_b16_plain_train_test_20260512/stages/S1/ahl/result.txt",
+  "ahl_subdir": "ahl",
+  "manifest_file": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_fewshot_clip_b16_plain_train_test_20260512/config/S1_stage_manifest.json",
+  "notes": [
+    "AHL original code reports anomaly scores plus AUC-ROC/AUC-PR and does not define a deployable classification threshold.",
+    "ADPretrain downstream metrics compute image F1 from the best point on precision_recall_curve(labels, scores).",
+    "This evaluation follows that ADPretrain-style metric for parity with the no-AHL baseline; it is an evaluation-set oracle threshold, not a deployable production threshold."
+  ]
+}

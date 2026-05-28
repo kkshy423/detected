@@ -1,0 +1,12 @@
+{
+  "experiment_id": "ahl_adp_xidun_pseudo_e10_moment_match_qm_20260501",
+  "purpose": "Small decoupled optimization: moment-match ADPretrain projected residual cache to original DRA feature cache using train/good scalar mean/std per scale, then run AHL on one class.",
+  "source_cache_root": "/gdata1/huangjd/data/xidun_mvtec_format_adpretrain_xidun_pseudo_e10_20260501",
+  "reference_cache_root": "/gdata1/huangjd/data/xidun_mvtec_format",
+  "optimized_cache_root": "/gdata1/huangjd/data/xidun_mvtec_format_adpretrain_xidun_pseudo_e10_moment_match_qm_20260501",
+  "alias_class_name": "models_qiumianxiepai_mm",
+  "moment_rule": "For each scale, use train/good only: x_out=(x-src_mean)/(src_std+eps)*ref_std+ref_mean. Apply same scalar affine transform to train/test npy files.",
+  "ahl_epochs": 30,
+  "ahl_auxiliary": true,
+  "runtime_change": "torch.backends.cudnn.enabled = False before running AHL main.py"
+}

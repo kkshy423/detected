@@ -1,0 +1,535 @@
+{
+  "created_at": "2026-05-15T13:07:22",
+  "project_root": "/ghome/huangjd/code/detected/adpretrain_bridge",
+  "archive_root": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup",
+  "policy": "archive-only for experiment artifacts; delete only rebuildable cache and empty lock dir",
+  "active_output_dirs": [
+    "output/qm_xiepai_adpretrain_only_clip_b16_official_train_test_20260512",
+    "output/qm_xiepai_adpretrain_only_clip_b16_official_full_original_20260513",
+    "output/qm_xiepai_fewshot_clip_b16_plain_train_test_20260512",
+    "output/qm_xiepai_fewshot_clip_b16_chmm_train_test_20260512",
+    "output/qm_xiepai_full_original_clip_b16_plain_ahl_20260512",
+    "output/qm_xiepai_yolo26s_cls_train_test_20260513_retry3_recovered_eval"
+  ],
+  "actions": [
+    {
+      "path": "check_fewshot_splits.py",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/check_fewshot_splits.py",
+      "reason": "legacy calibration-split checker; current split uses check_qm_xiepai_fewshot_train_test_splits.py"
+    },
+    {
+      "path": "prepare_qm_xiepai_fewshot_splits.py",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/prepare_qm_xiepai_fewshot_splits.py",
+      "reason": "legacy calibration-split generator; current split uses prepare_qm_xiepai_fewshot_train_test_splits.py"
+    },
+    {
+      "path": "summarize_fewshot_curve.py",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/summarize_fewshot_curve.py",
+      "reason": "legacy calibration-split summarizer; current split uses summarize_fewshot_curve_train_test.py"
+    },
+    {
+      "path": "run_fewshot_ahl_stage.py",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/run_fewshot_ahl_stage.py",
+      "reason": "legacy calibration-split AHL runner; current split uses run_fewshot_ahl_stage_train_test.py"
+    },
+    {
+      "path": "evaluate_fewshot_stage_metrics.py",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/evaluate_fewshot_stage_metrics.py",
+      "reason": "legacy calibration-split evaluator; current split uses evaluate_fewshot_stage_metrics_train_test.py"
+    },
+    {
+      "path": "evaluate_qm_xiepai_adpretrain_only_train_test.py",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/evaluate_qm_xiepai_adpretrain_only_train_test.py",
+      "reason": "older non-official ADPretrain-only evaluator; official evaluator is active"
+    },
+    {
+      "path": "recover_qm_xiepai_yolo26s_cls_retry3_eval.py",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/recover_qm_xiepai_yolo26s_cls_retry3_eval.py",
+      "reason": "one-off recovery script; recovered metrics already materialized, retry3 source weights are no longer present"
+    },
+    {
+      "path": "cleanup_qm_xiepai_20260513.py",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/cleanup_qm_xiepai_20260513.py",
+      "reason": "one-off cleanup script; manifest already archived"
+    },
+    {
+      "path": "yolo26n.pt",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/yolo26n.pt",
+      "reason": "unused YOLO nano checkpoint; current baseline is YOLO26s-cls"
+    },
+    {
+      "path": "summary_baseline_xidun",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/summary_baseline_xidun",
+      "reason": "old baseline summary directory, not part of current qm_xiepai mainline"
+    },
+    {
+      "path": "pbs/ahl_adp_plain_mqs.out",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/ahl_adp_plain_mqs.out",
+      "reason": "old shared PBS stdout log; future PBS runs can recreate it"
+    },
+    {
+      "path": "pbs/ahl_adp_plain_mqs.err",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/ahl_adp_plain_mqs.err",
+      "reason": "old shared PBS stderr log; future PBS runs can recreate it"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S0_20260511.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S0_20260511.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry1.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry1.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry2.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry2.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry4.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry4.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S2_20260511.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S2_20260511.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry1.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry1.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry2.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry2.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry4.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry4.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S4_20260511.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S4_20260511.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S4_20260511_retry1.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S4_20260511_retry1.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S4_20260511_retry2.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S4_20260511_retry2.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S4_20260511_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S4_20260511_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S6_20260511.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S6_20260511.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S6_20260511_retry1.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S6_20260511_retry1.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S6_20260511_retry2.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S6_20260511_retry2.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S6_20260511_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S6_20260511_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S8_20260511.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S8_20260511.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S8_20260511_retry1.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S8_20260511_retry1.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S8_20260511_retry2.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S8_20260511_retry2.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S8_20260511_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_S8_20260511_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_eval_timing_S0_S4_20260511.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_eval_timing_S0_S4_20260511.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_export_chmm_20260511.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_export_chmm_20260511.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_export_chmm_20260511_retry1.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_export_chmm_20260511_retry1.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_export_chmm_20260511_retry2.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_export_chmm_20260511_retry2.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_export_chmm_20260511_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_export_chmm_20260511_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S1_20260513_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S1_20260513_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S2_20260513_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S2_20260513_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S3_20260513_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S3_20260513_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S4_20260513_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S4_20260513_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S5_20260513_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S5_20260513_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S6_20260513_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S6_20260513_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S7_20260513_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S7_20260513_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S8_20260513_retry3.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_yolo26s_cls_train_test_S8_20260513_retry3.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_run/run_qm_xiepai_yolo26s_retry3_recovered_eval_20260513.sh",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_run/run_qm_xiepai_yolo26s_retry3_recovered_eval_20260513.sh",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S0_20260511.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S0_20260511.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry1.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry1.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry2.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry2.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry4.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S0_20260511_retry4.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S2_20260511.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S2_20260511.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry1.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry1.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry2.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry2.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry4.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S2_20260511_retry4.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S4_20260511.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S4_20260511.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S4_20260511_retry1.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S4_20260511_retry1.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S4_20260511_retry2.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S4_20260511_retry2.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S4_20260511_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S4_20260511_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S6_20260511.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S6_20260511.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S6_20260511_retry1.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S6_20260511_retry1.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S6_20260511_retry2.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S6_20260511_retry2.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S6_20260511_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S6_20260511_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S8_20260511.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S8_20260511.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S8_20260511_retry1.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S8_20260511_retry1.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S8_20260511_retry2.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S8_20260511_retry2.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S8_20260511_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_S8_20260511_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_eval_timing_S0_S4_20260511.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_eval_timing_S0_S4_20260511.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_export_chmm_20260511.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_export_chmm_20260511.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_export_chmm_20260511_retry1.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_export_chmm_20260511_retry1.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_export_chmm_20260511_retry2.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_export_chmm_20260511_retry2.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_export_chmm_20260511_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_fewshot_clip_b16_export_chmm_20260511_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S1_20260513_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S1_20260513_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S2_20260513_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S2_20260513_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S3_20260513_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S3_20260513_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S4_20260513_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S4_20260513_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S5_20260513_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S5_20260513_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S6_20260513_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S6_20260513_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S7_20260513_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S7_20260513_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S8_20260513_retry3.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_yolo26s_cls_train_test_S8_20260513_retry3.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "pbs/generated_submit/qm_xiepai_yolo26s_retry3_recovered_eval_20260513.pbs",
+      "status": "archived",
+      "archived_to": "/ghome/huangjd/code/detected/adpretrain_bridge/archive/20260515_safe_cleanup/pbs/generated_submit/qm_xiepai_yolo26s_retry3_recovered_eval_20260513.pbs",
+      "reason": "superseded or invalid generated PBS launcher/submit file; current outputs are already materialized"
+    },
+    {
+      "path": "__pycache__",
+      "status": "removed_cache",
+      "reason": "rebuildable Python bytecode cache"
+    },
+    {
+      "path": ".locks",
+      "status": "removed_empty_dir",
+      "reason": "empty stale lock directory"
+    },
+    {
+      "path": "qm_xiepai_current_results_20260515.md",
+      "status": "created",
+      "reason": "fresh active result index after cleanup"
+    }
+  ]
+}

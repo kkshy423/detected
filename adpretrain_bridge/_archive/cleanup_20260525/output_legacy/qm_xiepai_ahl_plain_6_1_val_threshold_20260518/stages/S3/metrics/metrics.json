@@ -1,0 +1,361 @@
+{
+  "stage": "S3",
+  "status": "ok",
+  "method": "AHL plain no-CHMM + ADPretrain official CLIP-B16 features",
+  "primary_policy": "strategy_stage_adaptive",
+  "primary": {
+    "threshold": 0.17667581140995026,
+    "accuracy": 0.4926829268292683,
+    "precision": 0.49019607843137253,
+    "recall": 1.0,
+    "f1": 0.6578947368421052,
+    "tp": 100,
+    "fp": 104,
+    "tn": 1,
+    "fn": 0
+  },
+  "threshold_results": {
+    "production_normal_p95_0": {
+      "calibration": {
+        "threshold": 0.31812911927700044,
+        "accuracy": 0.9274193548387096,
+        "precision": 0.7272727272727273,
+        "recall": 0.8421052631578947,
+        "f1": 0.7804878048780488,
+        "tp": 16,
+        "fp": 6,
+        "tn": 99,
+        "fn": 3,
+        "policy_family": "production_normal_percentile",
+        "normal_percentile": 95.0,
+        "expected_validation_fpr": 0.05
+      },
+      "test": {
+        "threshold": 0.31812911927700044,
+        "accuracy": 0.8731707317073171,
+        "precision": 0.9302325581395349,
+        "recall": 0.8,
+        "f1": 0.8602150537634408,
+        "tp": 80,
+        "fp": 6,
+        "tn": 99,
+        "fn": 20
+      }
+    },
+    "val_normal_p95_0": {
+      "calibration": {
+        "threshold": 0.31812911927700044,
+        "accuracy": 0.9274193548387096,
+        "precision": 0.7272727272727273,
+        "recall": 0.8421052631578947,
+        "f1": 0.7804878048780488,
+        "tp": 16,
+        "fp": 6,
+        "tn": 99,
+        "fn": 3,
+        "policy_family": "production_normal_percentile",
+        "normal_percentile": 95.0,
+        "expected_validation_fpr": 0.05
+      },
+      "test": {
+        "threshold": 0.31812911927700044,
+        "accuracy": 0.8731707317073171,
+        "precision": 0.9302325581395349,
+        "recall": 0.8,
+        "f1": 0.8602150537634408,
+        "tp": 80,
+        "fp": 6,
+        "tn": 99,
+        "fn": 20
+      }
+    },
+    "production_normal_p97_5": {
+      "calibration": {
+        "threshold": 0.35871504992246595,
+        "accuracy": 0.9274193548387096,
+        "precision": 0.8125,
+        "recall": 0.6842105263157895,
+        "f1": 0.742857142857143,
+        "tp": 13,
+        "fp": 3,
+        "tn": 102,
+        "fn": 6,
+        "policy_family": "production_normal_percentile",
+        "normal_percentile": 97.5,
+        "expected_validation_fpr": 0.025
+      },
+      "test": {
+        "threshold": 0.35871504992246595,
+        "accuracy": 0.8292682926829268,
+        "precision": 0.9452054794520548,
+        "recall": 0.69,
+        "f1": 0.7976878612716762,
+        "tp": 69,
+        "fp": 4,
+        "tn": 101,
+        "fn": 31
+      }
+    },
+    "val_normal_p97_5": {
+      "calibration": {
+        "threshold": 0.35871504992246595,
+        "accuracy": 0.9274193548387096,
+        "precision": 0.8125,
+        "recall": 0.6842105263157895,
+        "f1": 0.742857142857143,
+        "tp": 13,
+        "fp": 3,
+        "tn": 102,
+        "fn": 6,
+        "policy_family": "production_normal_percentile",
+        "normal_percentile": 97.5,
+        "expected_validation_fpr": 0.025
+      },
+      "test": {
+        "threshold": 0.35871504992246595,
+        "accuracy": 0.8292682926829268,
+        "precision": 0.9452054794520548,
+        "recall": 0.69,
+        "f1": 0.7976878612716762,
+        "tp": 69,
+        "fp": 4,
+        "tn": 101,
+        "fn": 31
+      }
+    },
+    "production_normal_p99_0": {
+      "calibration": {
+        "threshold": 0.38426016360521315,
+        "accuracy": 0.9274193548387096,
+        "precision": 0.8571428571428571,
+        "recall": 0.631578947368421,
+        "f1": 0.7272727272727273,
+        "tp": 12,
+        "fp": 2,
+        "tn": 103,
+        "fn": 7,
+        "policy_family": "production_normal_percentile",
+        "normal_percentile": 99.0,
+        "expected_validation_fpr": 0.01
+      },
+      "test": {
+        "threshold": 0.38426016360521315,
+        "accuracy": 0.7902439024390244,
+        "precision": 0.9384615384615385,
+        "recall": 0.61,
+        "f1": 0.7393939393939394,
+        "tp": 61,
+        "fp": 4,
+        "tn": 101,
+        "fn": 39
+      }
+    },
+    "val_normal_p99_0": {
+      "calibration": {
+        "threshold": 0.38426016360521315,
+        "accuracy": 0.9274193548387096,
+        "precision": 0.8571428571428571,
+        "recall": 0.631578947368421,
+        "f1": 0.7272727272727273,
+        "tp": 12,
+        "fp": 2,
+        "tn": 103,
+        "fn": 7,
+        "policy_family": "production_normal_percentile",
+        "normal_percentile": 99.0,
+        "expected_validation_fpr": 0.01
+      },
+      "test": {
+        "threshold": 0.38426016360521315,
+        "accuracy": 0.7902439024390244,
+        "precision": 0.9384615384615385,
+        "recall": 0.61,
+        "f1": 0.7393939393939394,
+        "tp": 61,
+        "fp": 4,
+        "tn": 101,
+        "fn": 39
+      }
+    },
+    "strategy_recall_first_r95": {
+      "calibration": {
+        "threshold": 0.17667581140995026,
+        "accuracy": 0.1532258064516129,
+        "precision": 0.1532258064516129,
+        "recall": 1.0,
+        "f1": 0.26573426573426573,
+        "tp": 19,
+        "fp": 105,
+        "tn": 0,
+        "fn": 0,
+        "policy_family": "strategy_recall_first",
+        "recall_floor": 0.95,
+        "selection_rule": "min_threshold_with_recall_floor"
+      },
+      "test": {
+        "threshold": 0.17667581140995026,
+        "accuracy": 0.4926829268292683,
+        "precision": 0.49019607843137253,
+        "recall": 1.0,
+        "f1": 0.6578947368421052,
+        "tp": 100,
+        "fp": 104,
+        "tn": 1,
+        "fn": 0
+      }
+    },
+    "strategy_recall_first_r90": {
+      "calibration": {
+        "threshold": 0.17667581140995026,
+        "accuracy": 0.1532258064516129,
+        "precision": 0.1532258064516129,
+        "recall": 1.0,
+        "f1": 0.26573426573426573,
+        "tp": 19,
+        "fp": 105,
+        "tn": 0,
+        "fn": 0,
+        "policy_family": "strategy_recall_first",
+        "recall_floor": 0.9,
+        "selection_rule": "min_threshold_with_recall_floor"
+      },
+      "test": {
+        "threshold": 0.17667581140995026,
+        "accuracy": 0.4926829268292683,
+        "precision": 0.49019607843137253,
+        "recall": 1.0,
+        "f1": 0.6578947368421052,
+        "tp": 100,
+        "fp": 104,
+        "tn": 1,
+        "fn": 0
+      }
+    },
+    "strategy_balanced_f1": {
+      "calibration": {
+        "threshold": 0.3203847035765648,
+        "accuracy": 0.9354838709677419,
+        "precision": 0.7619047619047619,
+        "recall": 0.8421052631578947,
+        "f1": 0.8,
+        "tp": 16,
+        "fp": 5,
+        "tn": 100,
+        "fn": 3,
+        "source_precision_recall_curve_f1": 0.7999999999995012,
+        "policy_family": "strategy_balanced",
+        "selection_rule": "validation_best_f1"
+      },
+      "test": {
+        "threshold": 0.3203847035765648,
+        "accuracy": 0.8731707317073171,
+        "precision": 0.9302325581395349,
+        "recall": 0.8,
+        "f1": 0.8602150537634408,
+        "tp": 80,
+        "fp": 6,
+        "tn": 99,
+        "fn": 20
+      }
+    },
+    "strategy_stage_adaptive": {
+      "calibration": {
+        "threshold": 0.17667581140995026,
+        "accuracy": 0.1532258064516129,
+        "precision": 0.1532258064516129,
+        "recall": 1.0,
+        "f1": 0.26573426573426573,
+        "tp": 19,
+        "fp": 105,
+        "tn": 0,
+        "fn": 0,
+        "policy_family": "strategy_stage_adaptive",
+        "recall_floor": 0.95,
+        "selection_rule": "min_threshold_with_recall_floor",
+        "source_policy": "strategy_recall_first_r95",
+        "stage": "S3"
+      },
+      "test": {
+        "threshold": 0.17667581140995026,
+        "accuracy": 0.4926829268292683,
+        "precision": 0.49019607843137253,
+        "recall": 1.0,
+        "f1": 0.6578947368421052,
+        "tp": 100,
+        "fp": 104,
+        "tn": 1,
+        "fn": 0
+      }
+    },
+    "val_best_f1": {
+      "calibration": {
+        "threshold": 0.3203847035765648,
+        "accuracy": 0.9354838709677419,
+        "precision": 0.7619047619047619,
+        "recall": 0.8421052631578947,
+        "f1": 0.8,
+        "tp": 16,
+        "fp": 5,
+        "tn": 100,
+        "fn": 3,
+        "source_precision_recall_curve_f1": 0.7999999999995012,
+        "policy_family": "offline_reference",
+        "selection_rule": "validation_best_f1"
+      },
+      "test": {
+        "threshold": 0.3203847035765648,
+        "accuracy": 0.8731707317073171,
+        "precision": 0.9302325581395349,
+        "recall": 0.8,
+        "f1": 0.8602150537634408,
+        "tp": 80,
+        "fp": 6,
+        "tn": 99,
+        "fn": 20
+      }
+    },
+    "test_best_f1_oracle": {
+      "calibration": {},
+      "test": {
+        "threshold": 0.2876803129911423,
+        "accuracy": 0.8829268292682927,
+        "precision": 0.8877551020408163,
+        "recall": 0.87,
+        "f1": 0.8787878787878789,
+        "tp": 87,
+        "fp": 11,
+        "tn": 94,
+        "fn": 13,
+        "source_precision_recall_curve_f1": 0.8787878787873789
+      },
+      "note": "offline reference only; threshold is selected on the held-out test labels"
+    }
+  },
+  "auc_roc": 0.9274285714285715,
+  "auc_pr": 0.9217986938411722,
+  "time_ms": 3144433.179870248,
+  "time_kind": "stage_wall_clock",
+  "calibration_auc_roc": 0.9388471177944862,
+  "calibration_auc_pr": 0.8626246881164188,
+  "train_counts": {
+    "normal": 200,
+    "anomaly": 5
+  },
+  "calibration_counts": {
+    "normal": 105,
+    "anomaly": 19
+  },
+  "test_counts": {
+    "normal": 105,
+    "anomaly": 100
+  },
+  "score_file": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_ahl_plain_6_1_val_threshold_20260518/stages/S3/metrics/scores.csv",
+  "result_file": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_ahl_plain_6_1_val_threshold_20260518/stages/S3/ahl/result.txt",
+  "manifest_file": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_ahl_plain_6_1_val_threshold_20260518/config/S3_stage_manifest.json",
+  "notes": [
+    "Primary threshold is selected by strategy_stage_adaptive unless overridden.",
+    "production_normal_p95 is the common production baseline; strategy_stage_adaptive is the line-start recall-first strategy.",
+    "test_best_f1_oracle is reported only for comparison with previous offline tables and is not the primary deployable policy.",
+    "AHL time_ms is stage wall-clock time from the bridge runner when runtime.json exists, not pure single-image inference time."
+  ]
+}

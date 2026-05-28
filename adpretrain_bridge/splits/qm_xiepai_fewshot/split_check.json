@@ -1,0 +1,81 @@
+{
+  "status": "ok",
+  "split_root": "/ghome/huangjd/code/detected/adpretrain_bridge/splits/qm_xiepai_fewshot",
+  "source_class_root": "/gdata1/huangjd/data/xidun_mvtec_format/models__球面斜拍",
+  "test_normal": 140,
+  "test_anomaly": 60,
+  "stages": {
+    "S0": {
+      "train_normal": 40,
+      "train_anomaly": 0,
+      "calib_normal": 10,
+      "calib_anomaly": 0,
+      "available_normal": 50,
+      "available_anomaly": 0
+    },
+    "S1": {
+      "train_normal": 80,
+      "train_anomaly": 1,
+      "calib_normal": 20,
+      "calib_anomaly": 0,
+      "available_normal": 100,
+      "available_anomaly": 1
+    },
+    "S2": {
+      "train_normal": 120,
+      "train_anomaly": 3,
+      "calib_normal": 30,
+      "calib_anomaly": 0,
+      "available_normal": 150,
+      "available_anomaly": 3
+    },
+    "S3": {
+      "train_normal": 160,
+      "train_anomaly": 4,
+      "calib_normal": 40,
+      "calib_anomaly": 1,
+      "available_normal": 200,
+      "available_anomaly": 5
+    },
+    "S4": {
+      "train_normal": 240,
+      "train_anomaly": 8,
+      "calib_normal": 60,
+      "calib_anomaly": 2,
+      "available_normal": 300,
+      "available_anomaly": 10
+    },
+    "S5": {
+      "train_normal": 320,
+      "train_anomaly": 16,
+      "calib_normal": 80,
+      "calib_anomaly": 4,
+      "available_normal": 400,
+      "available_anomaly": 20
+    },
+    "S6": {
+      "train_normal": 400,
+      "train_anomaly": 32,
+      "calib_normal": 100,
+      "calib_anomaly": 8,
+      "available_normal": 500,
+      "available_anomaly": 40
+    },
+    "S7": {
+      "train_normal": 448,
+      "train_anomaly": 64,
+      "calib_normal": 112,
+      "calib_anomaly": 16,
+      "available_normal": 560,
+      "available_anomaly": 80
+    },
+    "S8": {
+      "train_normal": 448,
+      "train_anomaly": 111,
+      "calib_normal": 112,
+      "calib_anomaly": 28,
+      "available_normal": 560,
+      "available_anomaly": 139
+    }
+  }
+}

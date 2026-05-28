@@ -1,0 +1,10 @@
+train/good/2_858.bmp
+train/good/2_690.bmp
+train/good/1_723.bmp
+train/good/4_109.bmp
+train/good/1_863.bmp
+train/good/1_842.bmp
+train/good/2_684.bmp
+train/good/2_661.bmp
+train/good/1_835.bmp
+train/good/4_69.bmp

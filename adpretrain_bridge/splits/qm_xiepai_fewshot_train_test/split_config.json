@@ -1,0 +1,169 @@
+{
+  "alias": "models_qiumianxiepai",
+  "source_class_root": "/gdata1/huangjd/data/xidun_mvtec_format/models__球面斜拍",
+  "split_root": "/ghome/huangjd/code/detected/adpretrain_bridge/splits/qm_xiepai_fewshot_train_test",
+  "seed": 20260511,
+  "created_at": "2026-05-12T13:53:54",
+  "path_format": "relative_to_source_class_root",
+  "split_policy": "fixed_test_plus_stage_train_only_no_calibration",
+  "data_inventory": {
+    "production_normal_from_train_good": 560,
+    "fixed_test_normal_from_test_good": 140,
+    "all_anomaly_from_test_defect": 199,
+    "fixed_test_anomaly": 60,
+    "production_anomaly_pool": 139
+  },
+  "stage_specs": {
+    "S0": {
+      "stage": "S0",
+      "train_normal": 50,
+      "train_anomaly": 0,
+      "test_normal": 140,
+      "test_anomaly": 60,
+      "source_stage_spec": {
+        "stage": "S0",
+        "available_normal": 50,
+        "available_anomaly": 0,
+        "train_normal": 40,
+        "train_anomaly": 0,
+        "calib_normal": 10,
+        "calib_anomaly": 0
+      }
+    },
+    "S1": {
+      "stage": "S1",
+      "train_normal": 100,
+      "train_anomaly": 1,
+      "test_normal": 140,
+      "test_anomaly": 60,
+      "source_stage_spec": {
+        "stage": "S1",
+        "available_normal": 100,
+        "available_anomaly": 1,
+        "train_normal": 80,
+        "train_anomaly": 1,
+        "calib_normal": 20,
+        "calib_anomaly": 0
+      }
+    },
+    "S2": {
+      "stage": "S2",
+      "train_normal": 150,
+      "train_anomaly": 3,
+      "test_normal": 140,
+      "test_anomaly": 60,
+      "source_stage_spec": {
+        "stage": "S2",
+        "available_normal": 150,
+        "available_anomaly": 3,
+        "train_normal": 120,
+        "train_anomaly": 3,
+        "calib_normal": 30,
+        "calib_anomaly": 0
+      }
+    },
+    "S3": {
+      "stage": "S3",
+      "train_normal": 200,
+      "train_anomaly": 5,
+      "test_normal": 140,
+      "test_anomaly": 60,
+      "source_stage_spec": {
+        "stage": "S3",
+        "available_normal": 200,
+        "available_anomaly": 5,
+        "train_normal": 160,
+        "train_anomaly": 4,
+        "calib_normal": 40,
+        "calib_anomaly": 1
+      }
+    },
+    "S4": {
+      "stage": "S4",
+      "train_normal": 300,
+      "train_anomaly": 10,
+      "test_normal": 140,
+      "test_anomaly": 60,
+      "source_stage_spec": {
+        "stage": "S4",
+        "available_normal": 300,
+        "available_anomaly": 10,
+        "train_normal": 240,
+        "train_anomaly": 8,
+        "calib_normal": 60,
+        "calib_anomaly": 2
+      }
+    },
+    "S5": {
+      "stage": "S5",
+      "train_normal": 400,
+      "train_anomaly": 20,
+      "test_normal": 140,
+      "test_anomaly": 60,
+      "source_stage_spec": {
+        "stage": "S5",
+        "available_normal": 400,
+        "available_anomaly": 20,
+        "train_normal": 320,
+        "train_anomaly": 16,
+        "calib_normal": 80,
+        "calib_anomaly": 4
+      }
+    },
+    "S6": {
+      "stage": "S6",
+      "train_normal": 500,
+      "train_anomaly": 40,
+      "test_normal": 140,
+      "test_anomaly": 60,
+      "source_stage_spec": {
+        "stage": "S6",
+        "available_normal": 500,
+        "available_anomaly": 40,
+        "train_normal": 400,
+        "train_anomaly": 32,
+        "calib_normal": 100,
+        "calib_anomaly": 8
+      }
+    },
+    "S7": {
+      "stage": "S7",
+      "train_normal": 560,
+      "train_anomaly": 80,
+      "test_normal": 140,
+      "test_anomaly": 60,
+      "source_stage_spec": {
+        "stage": "S7",
+        "available_normal": 560,
+        "available_anomaly": 80,
+        "train_normal": 448,
+        "train_anomaly": 64,
+        "calib_normal": 112,
+        "calib_anomaly": 16
+      }
+    },
+    "S8": {
+      "stage": "S8",
+      "train_normal": 560,
+      "train_anomaly": 139,
+      "test_normal": 140,
+      "test_anomaly": 60,
+      "source_stage_spec": {
+        "stage": "S8",
+        "available_normal": 560,
+        "available_anomaly": 139,
+        "train_normal": 448,
+        "train_anomaly": 111,
+        "calib_normal": 112,
+        "calib_anomaly": 28
+      }
+    }
+  },
+  "notes": [
+    "No calibration files are generated.",
+    "Each stage trains on all currently available production normal and anomaly samples.",
+    "test/good is used as the fixed 140-normal test set.",
+    "test/defect is shuffled once; 60 anomalies become fixed test anomalies and the remaining 139 form the production anomaly pool.",
+    "Stage training sets are cumulative prefixes of the production pools."
+  ]
+}

@@ -1,0 +1,3 @@
+val/defect/1_54.bmp
+val/defect/1_57.bmp
+val/defect/1_59.bmp

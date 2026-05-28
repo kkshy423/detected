@@ -1,0 +1,42 @@
+{
+  "status": "ok",
+  "primary_policy": "adpretrain_eval_best_f1",
+  "primary": {
+    "threshold": 0.004041323438286781,
+    "accuracy": 0.785,
+    "precision": 0.6808510638297872,
+    "recall": 0.5333333333333333,
+    "f1": 0.5981308411214953,
+    "source_precision_recall_curve_f1": 0.5981308411210027
+  },
+  "auc_roc": 0.7264285714285714,
+  "auc_pr": 0.6666460033509849,
+  "test_counts": {
+    "normal": 140,
+    "anomaly": 60
+  },
+  "score_rule": "YOLO classification probability for the defect class",
+  "defect_class_index": 0,
+  "model_names": {
+    "0": "defect",
+    "1": "good"
+  },
+  "inference_time_ms": 38.07827204465866,
+  "stage": "S3",
+  "method": "YOLO26s-cls supervised baseline recovered from retry3 best.pt",
+  "weights": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_yolo26s_cls_train_test_20260513_retry3/stages/S3/ultralytics/train/weights/best.pt",
+  "source_output_root": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_yolo26s_cls_train_test_20260513_retry3",
+  "data_root": "/gdata1/huangjd/data/yolo_qm_xiepai_cls_fewshot_train_test_20260512/S3",
+  "train_counts": {
+    "normal": 200,
+    "anomaly": 5
+  },
+  "fit_counts": {
+    "train_normal": 160,
+    "train_anomaly": 4,
+    "val_normal": 40,
+    "val_anomaly": 1
+  },
+  "score_file": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_yolo26s_cls_train_test_20260513_retry3_recovered_eval/stages/S3/metrics/scores.csv",
+  "recovery_note": "Recovered by evaluating existing retry3 weights; no training was run."
+}

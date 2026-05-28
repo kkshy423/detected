@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Logs
+*.log
+*.out
+*.err
+nohup.out
+
+# Runtime / temporary
+.tmp*/
+tmp/
+temp/
+.cache/
+.cache*/
+.DS_Store
+
+# Large experiment outputs
+adpretrain_bridge/output/
+adpretrain_bridge/runs/
+adpretrain_bridge/wandb/
+adpretrain_bridge/lightning_logs/
+adpretrain_bridge/pbs/*.out
+adpretrain_bridge/pbs/*.err
+
+# Generated PBS can be tracked selectively if needed.
+# Keep generated_run/generated_submit ignored by default, unless a task submission needs archival.
+adpretrain_bridge/pbs/generated_run/
+adpretrain_bridge/pbs/generated_submit/
+
+# Dataset / feature cache / generated data
+adpretrain_bridge/data/
+adpretrain_bridge/datasets/
+adpretrain_bridge/cache/
+adpretrain_bridge/features/
+AHL/data/
+AHL/datasets/
+AHL/output/
+AHL/outputs/
+AHL/experiment/
+AHL/experiments/
+ADPretrain/data/
+ADPretrain/datasets/
+ADPretrain/output/
+ADPretrain/outputs/
+ADPretrain/runs/
+
+# Model weights and checkpoints
+*.pt
+*.pth
+*.pkl
+*.ckpt
+*.onnx
+*.engine
+*.npy
+*.npz
+
+# ADPretrain checkpoints are large; do not track by default.
+ADPretrain/checkpoints/
+
+# Ultralytics / YOLO outputs
+**/ultralytics/train/
+**/weights/
+**/best.pt
+**/last.pt
+
+# Archives / backups created during manual patching
+*.bak
+*.bak_*
+*_bak.*
+*_backup.*

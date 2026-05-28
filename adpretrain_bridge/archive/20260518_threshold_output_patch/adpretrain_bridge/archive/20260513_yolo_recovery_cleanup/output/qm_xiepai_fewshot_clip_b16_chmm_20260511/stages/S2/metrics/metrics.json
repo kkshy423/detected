@@ -1,0 +1,71 @@
+{
+  "stage": "S2",
+  "status": "ok",
+  "primary_policy": "normal_p97_5",
+  "primary": {
+    "threshold": 2.26402804851532,
+    "accuracy": 0.88,
+    "precision": 0.8461538461538461,
+    "recall": 0.7333333333333333,
+    "f1": 0.7857142857142856
+  },
+  "auc_roc": 0.9022619047619048,
+  "auc_pr": 0.8013687040617475,
+  "test_counts": {
+    "normal": 140,
+    "anomaly": 60
+  },
+  "calibration_counts": {
+    "normal": 30,
+    "anomaly": 0
+  },
+  "threshold_definitions": {
+    "normal_p95_0": {
+      "source": "calibration_normal_percentile",
+      "percentile": 95.0,
+      "calibration_metrics": null,
+      "threshold": 2.1917995065450664
+    },
+    "normal_p97_5": {
+      "source": "calibration_normal_percentile",
+      "percentile": 97.5,
+      "calibration_metrics": null,
+      "threshold": 2.26402804851532
+    },
+    "normal_p99_0": {
+      "source": "calibration_normal_percentile",
+      "percentile": 99.0,
+      "calibration_metrics": null,
+      "threshold": 2.279876914024353
+    }
+  },
+  "threshold_results": {
+    "normal_p95_0": {
+      "threshold": 2.1917995065450664,
+      "accuracy": 0.865,
+      "precision": 0.7796610169491526,
+      "recall": 0.7666666666666667,
+      "f1": 0.773109243697479
+    },
+    "normal_p97_5": {
+      "threshold": 2.26402804851532,
+      "accuracy": 0.88,
+      "precision": 0.8461538461538461,
+      "recall": 0.7333333333333333,
+      "f1": 0.7857142857142856
+    },
+    "normal_p99_0": {
+      "threshold": 2.279876914024353,
+      "accuracy": 0.88,
+      "precision": 0.8461538461538461,
+      "recall": 0.7333333333333333,
+      "f1": 0.7857142857142856
+    }
+  },
+  "inference_time_ms": 5.873165130615234,
+  "inference_time_note": "feature-level AHL forward time; excludes CLIP extraction, CHMM affine, and disk I/O",
+  "score_file": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_fewshot_clip_b16_chmm_20260511/stages/S2/metrics/scores.csv",
+  "result_file": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_fewshot_clip_b16_chmm_20260511/stages/S2/ahl_retry4/result.txt",
+  "ahl_subdir": "ahl_retry4",
+  "manifest_file": "/ghome/huangjd/code/detected/adpretrain_bridge/output/qm_xiepai_fewshot_clip_b16_chmm_20260511/config/S2_stage_manifest.json"
+}

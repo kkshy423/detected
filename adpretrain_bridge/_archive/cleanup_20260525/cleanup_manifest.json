@@ -1,0 +1,956 @@
+{
+  "created_at": "2026-05-25T14:44:50.510449+08:00",
+  "root": "/ghome/huangjd/code/detected/adpretrain_bridge",
+  "archive": "/ghome/huangjd/code/detected/adpretrain_bridge/_archive/cleanup_20260525",
+  "style": "move_to_archive_no_delete",
+  "keep_outputs": [
+    "20260519_adpretrain_only_fixed_180_79_all_stage_p95_safe",
+    "20260519_ahl_plain_fixed_180_79_stage_v3",
+    "20260519_fixed_180_79_final_results_with_adpretrain_safe",
+    "20260519_fixed_180_79_strategy_mild_v2_1_safe_retable",
+    "20260519_late_s7_s8_threshold_probe",
+    "20260519_yolo26s_cls_fixed_180_79_stage_v3"
+  ],
+  "moves": [
+    {
+      "kind": "legacy_python",
+      "from": "benchmark_adpretrain_latency.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/benchmark_adpretrain_latency.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "channel_moment_match_aliases.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/channel_moment_match_aliases.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "channel_moment_match_cache.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/channel_moment_match_cache.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "check_feature_cache.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/check_feature_cache.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "check_qm_xiepai_fewshot_train_test_splits.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/check_qm_xiepai_fewshot_train_test_splits.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "compare_feature_stats.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/compare_feature_stats.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "evaluate_ahl_result_adpretrain_best_f1.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/evaluate_ahl_result_adpretrain_best_f1.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "evaluate_fewshot_stage_metrics_train_test.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/evaluate_fewshot_stage_metrics_train_test.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "evaluate_qm_xiepai_adpretrain_only_official_full_original.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/evaluate_qm_xiepai_adpretrain_only_official_full_original.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "evaluate_qm_xiepai_adpretrain_only_official_train_test.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/evaluate_qm_xiepai_adpretrain_only_official_train_test.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "export_plain_features.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/export_plain_features.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "export_plain_features_aliases.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/export_plain_features_aliases.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "export_qm_xiepai_clip_features.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/export_qm_xiepai_clip_features.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "precheck_ahl_clusters.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/precheck_ahl_clusters.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "prepare_plain_aug_aliases.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/prepare_plain_aug_aliases.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "prepare_qm_xiepai_6_1_val_threshold_splits.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/prepare_qm_xiepai_6_1_val_threshold_splits.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "prepare_qm_xiepai_fewshot_train_test_splits.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/prepare_qm_xiepai_fewshot_train_test_splits.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "prepare_qm_xiepai_full_original_plain_root.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/prepare_qm_xiepai_full_original_plain_root.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "prepare_qm_xiepai_yolo26s_cls_stages.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/prepare_qm_xiepai_yolo26s_cls_stages.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "prepare_threecls_dra_reference_root.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/prepare_threecls_dra_reference_root.py"
+    },
+    {
+      "kind": "legacy_doc",
+      "from": "qm_xiepai_current_results_20260515.md",
+      "to": "_archive/cleanup_20260525/root_legacy_docs/qm_xiepai_current_results_20260515.md"
+    },
+    {
+      "kind": "legacy_doc",
+      "from": "qm_xiepai_fewshot_clip_b16_plain_train_test_all_stages_20260516.md",
+      "to": "_archive/cleanup_20260525/root_legacy_docs/qm_xiepai_fewshot_clip_b16_plain_train_test_all_stages_20260516.md"
+    },
+    {
+      "kind": "legacy_doc",
+      "from": "qm_xiepai_main_results_tables_20260515.csv",
+      "to": "_archive/cleanup_20260525/root_legacy_docs/qm_xiepai_main_results_tables_20260515.csv"
+    },
+    {
+      "kind": "legacy_doc",
+      "from": "qm_xiepai_main_results_tables_20260515.md",
+      "to": "_archive/cleanup_20260525/root_legacy_docs/qm_xiepai_main_results_tables_20260515.md"
+    },
+    {
+      "kind": "legacy_doc",
+      "from": "qm_xiepai_plain_vs_chmm_split_vs_full_20260512.md",
+      "to": "_archive/cleanup_20260525/root_legacy_docs/qm_xiepai_plain_vs_chmm_split_vs_full_20260512.md"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "run_ahl_no_cudnn.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/run_ahl_no_cudnn.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "run_fewshot_ahl_stage_train_test.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/run_fewshot_ahl_stage_train_test.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "summarize_fewshot_curve_train_test.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/summarize_fewshot_curve_train_test.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "summarize_threeway_results.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/summarize_threeway_results.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "summarize_val_threshold_results.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/summarize_val_threshold_results.py"
+    },
+    {
+      "kind": "legacy_python",
+      "from": "xidun_aliases.py",
+      "to": "_archive/cleanup_20260525/root_legacy_scripts/xidun_aliases.py"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260518_policy_compare_eval_6_1_val_threshold.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260518_policy_compare_eval_6_1_val_threshold.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_adpretrain_only_fixed_180_79_all_stage_p95_safe.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_adpretrain_only_fixed_180_79_all_stage_p95_safe.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_adpretrain_only_fixed_180_79_s0_s2.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_adpretrain_only_fixed_180_79_s0_s2.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_ahl_fixed_180_79_S0.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_ahl_fixed_180_79_S0.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_ahl_fixed_180_79_S1.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_ahl_fixed_180_79_S1.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_ahl_fixed_180_79_S2.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_ahl_fixed_180_79_S2.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_ahl_fixed_180_79_S3.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_ahl_fixed_180_79_S3.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_ahl_fixed_180_79_S4.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_ahl_fixed_180_79_S4.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_ahl_fixed_180_79_S5.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_ahl_fixed_180_79_S5.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_ahl_fixed_180_79_S6.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_ahl_fixed_180_79_S6.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_ahl_fixed_180_79_S7.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_ahl_fixed_180_79_S7.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_ahl_fixed_180_79_S8.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_ahl_fixed_180_79_S8.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_eval_fixed_180_79_stage_v3.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_eval_fixed_180_79_stage_v3.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_yolo_fixed_180_79_S1.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_yolo_fixed_180_79_S1.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_yolo_fixed_180_79_S2.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_yolo_fixed_180_79_S2.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_yolo_fixed_180_79_S3.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_yolo_fixed_180_79_S3.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_yolo_fixed_180_79_S4.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_yolo_fixed_180_79_S4.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_yolo_fixed_180_79_S5.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_yolo_fixed_180_79_S5.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_yolo_fixed_180_79_S6.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_yolo_fixed_180_79_S6.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_yolo_fixed_180_79_S7.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_yolo_fixed_180_79_S7.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_20260519_yolo_fixed_180_79_S8.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_20260519_yolo_fixed_180_79_S8.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_6_1_export_plain_val_threshold_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_6_1_export_plain_val_threshold_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_6_1_val_threshold_summary_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_6_1_val_threshold_summary_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_6_1_val_threshold_summary_20260518.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_6_1_val_threshold_summary_20260518.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_adpretrain_only_official_clip_b16_train_test_20260512.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_adpretrain_only_official_clip_b16_train_test_20260512.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_adpretrain_only_official_full_original_20260513.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_adpretrain_only_official_full_original_20260513.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S0.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S0.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S1.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S1.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S2.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S2.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S3.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S3.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S4.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S4.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S5.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S5.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S6.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S6.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S7.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S7.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S8.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S8.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S0_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S0_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S1_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S1_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S2_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S2_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S3_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S3_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S4_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S4_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S5_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S5_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S6_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S6_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S7_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S7_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S8_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_ahl_plain_6_1_val_threshold_S8_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_train_test_S0_20260512.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_train_test_S0_20260512.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_train_test_S2_20260512.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_train_test_S2_20260512.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_train_test_S4_20260512.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_train_test_S4_20260512.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_train_test_S6_20260512.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_train_test_S6_20260512.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_train_test_S8_20260512.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_chmm_train_test_S8_20260512.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S0_20260512.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S0_20260512.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S1_20260516_fill.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S1_20260516_fill.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S2_20260512.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S2_20260512.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S3_20260516_fill.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S3_20260516_fill.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S4_20260512.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S4_20260512.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S5_20260516_fill.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S5_20260516_fill.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S6_20260512.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S6_20260512.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S7_20260516_fill.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S7_20260516_fill.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S8_20260512.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_S8_20260512.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_all_stages_summary_20260516_fill.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_fewshot_clip_b16_plain_train_test_all_stages_summary_20260516_fill.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_full_original_clip_b16_plain_ahl_20260512.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_full_original_clip_b16_plain_ahl_20260512.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_20260518_S4_retry_ampoff.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_20260518_S4_retry_ampoff.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S0_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S0_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S1_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S1_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S2_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S2_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S3_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S3_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S4_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S4_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S5_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S5_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S6_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S6_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S7_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S7_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_run",
+      "from": "pbs/generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S8_20260517.sh",
+      "to": "_archive/cleanup_20260525/pbs_generated_run/run_qm_xiepai_yolo26s_cls_6_1_val_threshold_S8_20260517.sh"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260518_policy_compare_eval_6_1_val_threshold.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260518_policy_compare_eval_6_1_val_threshold.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_adpretrain_only_fixed_180_79_all_stage_p95_safe.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_adpretrain_only_fixed_180_79_all_stage_p95_safe.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_adpretrain_only_fixed_180_79_s0_s2.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_adpretrain_only_fixed_180_79_s0_s2.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_ahl_fixed_180_79_S0.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_ahl_fixed_180_79_S0.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_ahl_fixed_180_79_S1.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_ahl_fixed_180_79_S1.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_ahl_fixed_180_79_S2.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_ahl_fixed_180_79_S2.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_ahl_fixed_180_79_S3.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_ahl_fixed_180_79_S3.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_ahl_fixed_180_79_S4.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_ahl_fixed_180_79_S4.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_ahl_fixed_180_79_S5.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_ahl_fixed_180_79_S5.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_ahl_fixed_180_79_S6.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_ahl_fixed_180_79_S6.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_ahl_fixed_180_79_S7.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_ahl_fixed_180_79_S7.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_ahl_fixed_180_79_S8.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_ahl_fixed_180_79_S8.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_eval_fixed_180_79_stage_v3.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_eval_fixed_180_79_stage_v3.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_yolo_fixed_180_79_S1.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_yolo_fixed_180_79_S1.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_yolo_fixed_180_79_S2.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_yolo_fixed_180_79_S2.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_yolo_fixed_180_79_S3.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_yolo_fixed_180_79_S3.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_yolo_fixed_180_79_S4.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_yolo_fixed_180_79_S4.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_yolo_fixed_180_79_S5.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_yolo_fixed_180_79_S5.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_yolo_fixed_180_79_S6.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_yolo_fixed_180_79_S6.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_yolo_fixed_180_79_S7.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_yolo_fixed_180_79_S7.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/20260519_yolo_fixed_180_79_S8.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/20260519_yolo_fixed_180_79_S8.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_6_1_export_plain_val_threshold_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_6_1_export_plain_val_threshold_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_6_1_val_threshold_summary_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_6_1_val_threshold_summary_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_6_1_val_threshold_summary_20260518.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_6_1_val_threshold_summary_20260518.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_adpretrain_only_official_clip_b16_train_test_20260512.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_adpretrain_only_official_clip_b16_train_test_20260512.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_adpretrain_only_official_full_original_20260513.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_adpretrain_only_official_full_original_20260513.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S0.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S0.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S1.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S1.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S2.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S2.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S3.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S3.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S4.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S4.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S5.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S5.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S6.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S6.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S7.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S7.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S8.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_20260518_S8.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S0_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S0_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S1_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S1_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S2_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S2_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S3_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S3_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S4_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S4_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S5_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S5_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S6_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S6_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S7_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S7_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S8_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_ahl_plain_6_1_val_threshold_S8_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_train_test_S0_20260512.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_chmm_train_test_S0_20260512.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_train_test_S2_20260512.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_chmm_train_test_S2_20260512.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_train_test_S4_20260512.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_chmm_train_test_S4_20260512.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_train_test_S6_20260512.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_chmm_train_test_S6_20260512.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_chmm_train_test_S8_20260512.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_chmm_train_test_S8_20260512.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S0_20260512.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S0_20260512.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S1_20260516_fill.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S1_20260516_fill.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S2_20260512.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S2_20260512.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S3_20260516_fill.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S3_20260516_fill.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S4_20260512.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S4_20260512.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S5_20260516_fill.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S5_20260516_fill.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S6_20260512.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S6_20260512.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S7_20260516_fill.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S7_20260516_fill.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S8_20260512.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_S8_20260512.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_all_stages_summary_20260516_fill.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_fewshot_clip_b16_plain_train_test_all_stages_summary_20260516_fill.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_full_original_clip_b16_plain_ahl_20260512.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_full_original_clip_b16_plain_ahl_20260512.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_20260518_S4_retry_ampoff.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_20260518_S4_retry_ampoff.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S0_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S0_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S1_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S1_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S2_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S2_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S3_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S3_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S4_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S4_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S5_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S5_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S6_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S6_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S7_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S7_20260517.pbs"
+    },
+    {
+      "kind": "pbs_generated_submit",
+      "from": "pbs/generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S8_20260517.pbs",
+      "to": "_archive/cleanup_20260525/pbs_generated_submit/qm_xiepai_yolo26s_cls_6_1_val_threshold_S8_20260517.pbs"
+    },
+    {
+      "kind": "pbs_old_log",
+      "from": "pbs/ahl_adp_plain_mqs.out",
+      "to": "_archive/cleanup_20260525/pbs_old_logs/ahl_adp_plain_mqs.out"
+    },
+    {
+      "kind": "pbs_old_log",
+      "from": "pbs/ahl_adp_plain_mqs.err",
+      "to": "_archive/cleanup_20260525/pbs_old_logs/ahl_adp_plain_mqs.err"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/20260518_policy_compare_eval_6_1_val_threshold",
+      "to": "_archive/cleanup_20260525/output_legacy/20260518_policy_compare_eval_6_1_val_threshold"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/20260518_threshold_policy_v2_eval_6_1_val_threshold",
+      "to": "_archive/cleanup_20260525/output_legacy/20260518_threshold_policy_v2_eval_6_1_val_threshold"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/20260519_threshold_compare_fixed_180_79_stage_v3",
+      "to": "_archive/cleanup_20260525/output_legacy/20260519_threshold_compare_fixed_180_79_stage_v3"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/20260519_threshold_v2_on_fixed_180_79_eval",
+      "to": "_archive/cleanup_20260525/output_legacy/20260519_threshold_v2_on_fixed_180_79_eval"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/_preserved_final_results_20260511",
+      "to": "_archive/cleanup_20260525/output_legacy/_preserved_final_results_20260511"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/qm_xiepai_6_1_val_threshold_summary_20260518",
+      "to": "_archive/cleanup_20260525/output_legacy/qm_xiepai_6_1_val_threshold_summary_20260518"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/qm_xiepai_adpretrain_only_clip_b16_official_full_original_20260513",
+      "to": "_archive/cleanup_20260525/output_legacy/qm_xiepai_adpretrain_only_clip_b16_official_full_original_20260513"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/qm_xiepai_adpretrain_only_clip_b16_official_train_test_20260512",
+      "to": "_archive/cleanup_20260525/output_legacy/qm_xiepai_adpretrain_only_clip_b16_official_train_test_20260512"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/qm_xiepai_ahl_plain_6_1_val_threshold_20260518",
+      "to": "_archive/cleanup_20260525/output_legacy/qm_xiepai_ahl_plain_6_1_val_threshold_20260518"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/qm_xiepai_fewshot_clip_b16_chmm_train_test_20260512",
+      "to": "_archive/cleanup_20260525/output_legacy/qm_xiepai_fewshot_clip_b16_chmm_train_test_20260512"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/qm_xiepai_fewshot_clip_b16_plain_train_test_20260512",
+      "to": "_archive/cleanup_20260525/output_legacy/qm_xiepai_fewshot_clip_b16_plain_train_test_20260512"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/qm_xiepai_full_original_clip_b16_plain_ahl_20260512",
+      "to": "_archive/cleanup_20260525/output_legacy/qm_xiepai_full_original_clip_b16_plain_ahl_20260512"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/qm_xiepai_yolo26s_cls_6_1_val_threshold_20260517",
+      "to": "_archive/cleanup_20260525/output_legacy/qm_xiepai_yolo26s_cls_6_1_val_threshold_20260517"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/qm_xiepai_yolo26s_cls_6_1_val_threshold_20260518_retry_s4_ampoff",
+      "to": "_archive/cleanup_20260525/output_legacy/qm_xiepai_yolo26s_cls_6_1_val_threshold_20260518_retry_s4_ampoff"
+    },
+    {
+      "kind": "legacy_output",
+      "from": "output/qm_xiepai_yolo26s_cls_train_test_20260513_retry3_recovered_eval",
+      "to": "_archive/cleanup_20260525/output_legacy/qm_xiepai_yolo26s_cls_train_test_20260513_retry3_recovered_eval"
+    }
+  ]
+}

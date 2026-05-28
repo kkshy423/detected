@@ -1,0 +1,13 @@
+{
+  "experiment_id": "ahl_adp_xidun_pseudo_e10_channel_mm_qm_20260508",
+  "purpose": "Single-class per-channel moment matching experiment after assuming global scalar moment matching is useful.",
+  "source_cache_root": "/gdata1/huangjd/data/xidun_mvtec_format_adpretrain_xidun_pseudo_e10_20260501",
+  "reference_cache_root": "/gdata1/huangjd/data/xidun_mvtec_format",
+  "output_cache_root": "/gdata1/huangjd/data/xidun_mvtec_format_adpretrain_xidun_pseudo_e10_channel_mm_qm_20260508",
+  "alias_class_name": "models_qiumianxiepai_chmm",
+  "method": "per-channel train/good mean/std matching for feature and feature_scale",
+  "ahl_epochs": 30,
+  "ahl_auxiliary": true,
+  "runtime_change": "torch.backends.cudnn.enabled = False before running AHL main.py",
+  "submit_policy": "Do not qsub until user confirms generated .sh/.pbs content."
+}

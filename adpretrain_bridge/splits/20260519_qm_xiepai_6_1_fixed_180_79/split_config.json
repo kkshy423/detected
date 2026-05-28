@@ -1,0 +1,115 @@
+{
+  "status": "ok",
+  "alias": "models_qiumianxiepai",
+  "source_class_root": "/gdata1/huangjd/xidun_mvtec_format_6_1/models__球面斜拍",
+  "split_root": "splits/20260519_qm_xiepai_6_1_fixed_180_79",
+  "split_policy": "20260519_fixed_counts_cumulative_train_fixed_calib_test_180_79",
+  "stage_specs": {
+    "S0": {
+      "stage": "S0",
+      "train_normal": 50,
+      "train_anomaly": 0,
+      "calib_normal": 100,
+      "calib_anomaly": 40,
+      "test_normal": 180,
+      "test_anomaly": 79
+    },
+    "S1": {
+      "stage": "S1",
+      "train_normal": 100,
+      "train_anomaly": 1,
+      "calib_normal": 100,
+      "calib_anomaly": 40,
+      "test_normal": 180,
+      "test_anomaly": 79
+    },
+    "S2": {
+      "stage": "S2",
+      "train_normal": 150,
+      "train_anomaly": 3,
+      "calib_normal": 100,
+      "calib_anomaly": 40,
+      "test_normal": 180,
+      "test_anomaly": 79
+    },
+    "S3": {
+      "stage": "S3",
+      "train_normal": 200,
+      "train_anomaly": 5,
+      "calib_normal": 100,
+      "calib_anomaly": 40,
+      "test_normal": 180,
+      "test_anomaly": 79
+    },
+    "S4": {
+      "stage": "S4",
+      "train_normal": 300,
+      "train_anomaly": 10,
+      "calib_normal": 100,
+      "calib_anomaly": 40,
+      "test_normal": 180,
+      "test_anomaly": 79
+    },
+    "S5": {
+      "stage": "S5",
+      "train_normal": 400,
+      "train_anomaly": 20,
+      "calib_normal": 100,
+      "calib_anomaly": 40,
+      "test_normal": 180,
+      "test_anomaly": 79
+    },
+    "S6": {
+      "stage": "S6",
+      "train_normal": 420,
+      "train_anomaly": 40,
+      "calib_normal": 100,
+      "calib_anomaly": 40,
+      "test_normal": 180,
+      "test_anomaly": 79
+    },
+    "S7": {
+      "stage": "S7",
+      "train_normal": 420,
+      "train_anomaly": 60,
+      "calib_normal": 100,
+      "calib_anomaly": 40,
+      "test_normal": 180,
+      "test_anomaly": 79
+    },
+    "S8": {
+      "stage": "S8",
+      "train_normal": 420,
+      "train_anomaly": 80,
+      "calib_normal": 100,
+      "calib_anomaly": 40,
+      "test_normal": 180,
+      "test_anomaly": 79
+    }
+  },
+  "data_inventory": {
+    "normal_total": 700,
+    "anomaly_total": 199,
+    "normal_source_order": [
+      "train/good",
+      "val/good",
+      "test/good"
+    ],
+    "anomaly_source_order": [
+      "val/defect",
+      "test/defect"
+    ],
+    "train_normal_pool": 420,
+    "train_anomaly_pool": 80,
+    "calib_normal": 100,
+    "calib_anomaly": 40,
+    "test_normal": 180,
+    "test_anomaly": 79
+  },
+  "notes": [
+    "Later stages are strict prefixes over earlier stage train lists.",
+    "Calibration and test sets are fixed across all stages.",
+    "This is a new full-pool redistribution split; it is comparable by trend to the previous 6_1 split but not sample-identical.",
+    "Text label lists are stored under the split root for reproducibility."
+  ]
+}

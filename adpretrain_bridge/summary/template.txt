@@ -1,0 +1,4 @@
+date method data stage status reason acc precision recall time_ms f1 auc_roc auc_pr
+20260518 ahl_plain val S4 ok - 0.8254 0.7879 0.8667 123.4 0.8254 0.9279 0.8727
+20260518 yolo26s_cls val S8 ok - 0.8732 1.0000 0.7400 42.1 0.8506 0.9664 0.9709
+20260518 ahl_plain val S0 failed python38_dict_merge - - - - - - -
