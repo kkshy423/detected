@@ -2,7 +2,7 @@
 #PBS -q batch
 #PBS -o /ghome/huangjd/code/detected/adpretrain_bridge/pbs/ahl_adp_plain_mqs.out
 #PBS -e /ghome/huangjd/code/detected/adpretrain_bridge/pbs/ahl_adp_plain_mqs.err
-#PBS -l nodes=1:gpus=1:A
+#PBS -l nodes=1:gpus=1:a
 #PBS -r y
 #PBS -m abef
 

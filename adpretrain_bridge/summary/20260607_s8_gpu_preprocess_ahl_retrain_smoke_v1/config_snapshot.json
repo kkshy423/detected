@@ -1,0 +1,43 @@
+{
+  "task": "20260607_s8_gpu_preprocess_ahl_retrain_smoke_v1",
+  "stage": "S8",
+  "preprocess_backend": "gpu_tensor_torchvision_aa_true",
+  "output_root": "/ghome/huangjd/code/detected/adpretrain_bridge/output/20260607_s8_gpu_preprocess_ahl_retrain_smoke_v1",
+  "summary_root": "/ghome/huangjd/code/detected/adpretrain_bridge/summary/20260607_s8_gpu_preprocess_ahl_retrain_smoke_v1",
+  "split_root": "/ghome/huangjd/code/detected/adpretrain_bridge/splits/20260529_qm_xiepai_6_1_fixed_180_70_val49",
+  "cpu_cache_root": "/gdata1/huangjd/data/xidun_qm_xiepai_6_1_adpretrain_dino_large_val_threshold_cache/plain_dino_large_norm",
+  "gpu_cache_root": "/gdata1/huangjd/data/xidun_qm_xiepai_6_1_adpretrain_dino_large_val_threshold_cache/plain_dino_large_norm_gpu_tensor_aa_true_s8_retrain_smoke_v1",
+  "cpu_stage_root": "/gdata1/huangjd/data/xidun_qm_xiepai_6_1_adpretrain_dino_large_val_threshold_cache/stage_roots_plain_dino_large_norm_val49/S8",
+  "gpu_stage_root_base": "/gdata1/huangjd/data/xidun_qm_xiepai_6_1_adpretrain_dino_large_val_threshold_cache/stage_roots_plain_dino_large_norm_gpu_tensor_aa_true_s8_retrain_smoke_v1",
+  "adpretrain_root": "/ghome/huangjd/code/detected/ADPretrain",
+  "projector_checkpoint": "/ghome/huangjd/code/detected/ADPretrain/checkpoints/dino-large/checkpoints_img_norm.pth",
+  "cpu_ahl_weights": "/ghome/huangjd/code/detected/adpretrain_bridge/output/20260529_ahl_dino_large_180_70_val49_stage_v1/stages/S8/ahl/models_qiumianxiepai_ctest.pkl",
+  "gpu_retrain_weights": "/ghome/huangjd/code/detected/adpretrain_bridge/output/20260607_s8_gpu_preprocess_ahl_retrain_smoke_v1/stages/S8/ahl/models_qiumianxiepai_ctest.pkl",
+  "threshold_policy": "strategy_mild_stage_v2_1_safe",
+  "adp_export_num_ref": 8,
+  "online_n_ref": 5,
+  "epochs": 30,
+  "steps_per_epoch": 20,
+  "batch_size": 48,
+  "workers": 4,
+  "warmup": 5,
+  "device": "cuda:0",
+  "torch_version": "2.4.1+cu121",
+  "export_info": {
+    "status": "reused",
+    "cache_class_root": "/gdata1/huangjd/data/xidun_qm_xiepai_6_1_adpretrain_dino_large_val_threshold_cache/plain_dino_large_norm_gpu_tensor_aa_true_s8_retrain_smoke_v1/models_qiumianxiepai",
+    "sample_count": 899,
+    "runtime_file": "/gdata1/huangjd/data/xidun_qm_xiepai_6_1_adpretrain_dino_large_val_threshold_cache/plain_dino_large_norm_gpu_tensor_aa_true_s8_retrain_smoke_v1/models_qiumianxiepai/feature_runtime.json"
+  },
+  "counts": {
+    "train_ref_pool": 420,
+    "calib": 149,
+    "test": 250,
+    "steady_test": 245
+  },
+  "thresholds": {
+    "cpu_baseline": 0.5757039785385132,
+    "gpu_no_retrain": 0.5823673605918884,
+    "gpu_retrain": 0.6191262006759644
+  }
+}

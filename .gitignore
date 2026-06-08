@@ -79,3 +79,34 @@ ADPretrain/checkpoints/
 *.bak_*
 *_bak.*
 *_backup.*
+
+# ===== 20260608 GitHub 上传增补：只传主线+依赖代码 =====
+# 大文件权重/数据（GitHub 单文件上限 100MB）
+*.pt
+*.pth
+*.pkl
+*.npy
+*.bin
+*.onnx
+*.engine
+*.safetensors
+
+# 排除的独立子项目（不在本次主线+依赖范围）
+DRA/
+AITEX_anomaly_detection/
+
+# archive / 历史垃圾（含递归嵌套）
+adpretrain_bridge/archive/
+adpretrain_bridge/_archive/
+
+# 各子项目 output / runs / data cache
+ADPretrain/output/
+ADPretrain/runs/
+AHL/output/
+AHL/runs/
+adpretrain_bridge/output/
+adpretrain_bridge/runs/
+adpretrain_bridge/wandb/
+
+# AHL 的 git 元数据（转普通目录纳入主仓）
+AHL/.git/

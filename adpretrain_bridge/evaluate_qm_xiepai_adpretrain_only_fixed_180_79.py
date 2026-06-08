@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Evaluate ADPretrain-only on the 20260519 fixed 180/79 split.
+"""Evaluate ADPretrain-only on the 20260529 fixed 180/70/49 split.
 
 This is a no-AHL, no-finetune baseline. It uses stage train_normal images only
 as ADPretrain reference images, selects thresholds from the fixed calibration
-set, and evaluates the fixed 180 normal / 79 anomaly test set.
+set, and evaluates the fixed 180 normal / 70 anomaly test set.
 """
 
 import argparse
@@ -32,10 +32,10 @@ from common import (
 )
 from summarize_fixed_180_79_strategy_mild_v2_1_safe import production_p95, safe_v2_1
 from threshold_policies import metric_at
-from fewshot_qm_xiepai_common import ADPRETRAIN_ROOT, OFFICIAL_CLIP_PROJECTOR, read_lines, write_json
+from fewshot_qm_xiepai_common import ADPRETRAIN_ROOT, DEFAULT_BACKBONE, OFFICIAL_CLIP_PROJECTOR, read_lines, write_json
 
-DEFAULT_SPLIT_ROOT = Path("/ghome/huangjd/code/detected/adpretrain_bridge/splits/20260519_qm_xiepai_6_1_fixed_180_79")
-DEFAULT_OUTPUT_ROOT = Path("/ghome/huangjd/code/detected/adpretrain_bridge/output/20260519_adpretrain_only_fixed_180_79_all_stage_p95_safe")
+DEFAULT_SPLIT_ROOT = Path("/ghome/huangjd/code/detected/adpretrain_bridge/splits/20260529_qm_xiepai_6_1_fixed_180_70_val49")
+DEFAULT_OUTPUT_ROOT = Path("/ghome/huangjd/code/detected/adpretrain_bridge/output/20260529_adpretrain_only_dino_large_180_70_val49_all_stage_p95_safe")
 DEFAULT_SOURCE_PARENT = Path("/gdata1/huangjd/xidun_mvtec_format_6_1")
 DEFAULT_STAGES = [f"S{i}" for i in range(9)]
 PRIMARY_POLICY = "strategy_mild_stage_v2_1_safe"
@@ -50,7 +50,7 @@ def parse_args():
     parser.add_argument("--source-parent", type=Path, default=DEFAULT_SOURCE_PARENT)
     parser.add_argument("--adpretrain-root", type=Path, default=ADPRETRAIN_ROOT)
     parser.add_argument("--checkpoint", type=Path, default=OFFICIAL_CLIP_PROJECTOR)
-    parser.add_argument("--backbone", default="clip-base")
+    parser.add_argument("--backbone", default=DEFAULT_BACKBONE)
     parser.add_argument("--num-ref", type=int, default=8)
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--feature-levels", type=int, default=4)
@@ -192,7 +192,7 @@ def main():
     summary_rows = []
     summary_payload = {
         "status": "ok",
-        "method": "ADPretrain-only official CLIP-B16 projected residual feature norm",
+        "method": "ADPretrain-only official DINO-large projected residual feature norm",
         "primary_policy": PRIMARY_POLICY,
         "split_root": str(args.split_root),
         "source_class_root": str(source_class_root),
@@ -272,7 +272,7 @@ def main():
         write_json(metrics_dir / "metrics.json", stage_metrics)
 
         lines = [
-            f"# ADPretrain-only Fixed 180/79 {stage}",
+            f"# ADPretrain-only DINO-large Fixed 180/70/49 {stage}",
             "",
             "| Policy | Threshold | P | R | Acc | F1 | ADP feature ms | Postprocess ms | Total ms | TP | FP | TN | FN |",
             "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
@@ -336,7 +336,7 @@ def main():
         writer.writerows(summary_rows)
 
     md = [
-        "# ADPretrain-only Fixed 180/79 S0-S8",
+        "# ADPretrain-only DINO-large Fixed 180/70/49 S0-S8",
         "",
         "Two deployable thresholds are selected on calibration data only: `production_normal_p95` and `strategy_mild_stage_v2_1_safe`.",
         "",

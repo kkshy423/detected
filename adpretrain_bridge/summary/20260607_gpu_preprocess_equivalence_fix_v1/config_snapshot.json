@@ -1,0 +1,60 @@
+{
+  "task": "20260607_gpu_preprocess_equivalence_fix_v1",
+  "stage_root": "/gdata1/huangjd/data/xidun_qm_xiepai_6_1_adpretrain_dino_large_val_threshold_cache/stage_roots_plain_dino_large_norm_val49/S8",
+  "alias": "models_qiumianxiepai",
+  "stage": "S8",
+  "ahl_weights": "/ghome/huangjd/code/detected/adpretrain_bridge/output/20260529_ahl_dino_large_180_70_val49_stage_v1/stages/S8/ahl/models_qiumianxiepai_ctest.pkl",
+  "projector_checkpoint": "/ghome/huangjd/code/detected/ADPretrain/checkpoints/dino-large/checkpoints_img_norm.pth",
+  "external_threshold_source": "/ghome/huangjd/code/detected/adpretrain_bridge/output/20260527_s8_time_profile_threshold_compare/policy_compare.json",
+  "external_threshold_value": 0.3929023595992476,
+  "fixed_threshold_source": "cpu_calib",
+  "fixed_cpu_threshold_value": 0.5757039785385132,
+  "calibrated_thresholds": {
+    "query_only_diff:cpu_pil": 0.5757039785385132,
+    "query_only_diff:gpu_tensor_current": 0.5656757354736328,
+    "query_only_diff:gpu_tensor_torchvision_aa_true": 0.5656757354736328,
+    "query_only_diff:gpu_tensor_torchvision_aa_false": 0.57345050573349,
+    "ref_and_query_diff:cpu_pil": 0.5757039785385132,
+    "ref_and_query_diff:gpu_tensor_current": 0.5823673605918884,
+    "ref_and_query_diff:gpu_tensor_torchvision_aa_true": 0.5823673605918884,
+    "ref_and_query_diff:gpu_tensor_torchvision_aa_false": 0.556605875492096
+  },
+  "threshold_policy": "strategy_mild_stage_v2_1_safe",
+  "n_ref": 5,
+  "warmup": 5,
+  "device": "cuda:0",
+  "torch_version": "2.4.1+cu121",
+  "torchvision_version": "0.19.1+cu121",
+  "interpolation_mode": "BICUBIC",
+  "antialias_supported_by_torchvision_resize": true,
+  "decode_policy": "PIL decode on CPU; primary latency uses decoded_image_to_threshold_ms and ignores image_load_decode_ms.",
+  "backends": {
+    "cpu_pil": "CPU PIL resize/crop/to_tensor/normalize baseline, unchanged.",
+    "gpu_tensor_current": "Previous GPU tensor path: PIL to CHW uint8 CPU tensor, batched NCHW GPU resize/crop, antialias=True.",
+    "gpu_tensor_torchvision_aa_true": "Torchvision tensor path on single CHW GPU tensor, BICUBIC, antialias=True.",
+    "gpu_tensor_torchvision_aa_false": "Torchvision tensor path on single CHW GPU tensor, BICUBIC, antialias=False."
+  },
+  "scenarios": {
+    "query_only_diff": "Reference bank fixed to CPU-PIL; query uses each backend.",
+    "ref_and_query_diff": "Reference bank and query both use the corresponding backend."
+  },
+  "acceptance": {
+    "prediction_changed_test_max": 2,
+    "score_abs_diff_p95_max": 0.02,
+    "fixed_threshold_f1_gap_max": 0.01,
+    "fixed_threshold_recall_gap_max": 0.02,
+    "preprocess_total_median_must_be_lower_than_cpu": true
+  },
+  "backend_reference_setup_ms": {
+    "cpu_pil": 1045.1726708561182,
+    "gpu_tensor_current": 766.9846182689071,
+    "gpu_tensor_torchvision_aa_true": 789.0958320349455,
+    "gpu_tensor_torchvision_aa_false": 2345.104383304715
+  },
+  "counts": {
+    "train_ref_pool": 420,
+    "calib": 149,
+    "test": 250,
+    "steady_test": 245
+  }
+}

@@ -20,18 +20,18 @@ from typing import Dict, List
 from fewshot_qm_xiepai_common import ALIAS_CLASS, natural_key, write_json, write_lines
 
 SOURCE_BASE = Path("/gdata1/huangjd/xidun_mvtec_format_6_1")
-SPLIT_ROOT = Path("/ghome/huangjd/code/detected/adpretrain_bridge/splits/20260519_qm_xiepai_6_1_fixed_180_79")
+SPLIT_ROOT = Path("/ghome/huangjd/code/detected/adpretrain_bridge/splits/20260529_qm_xiepai_6_1_fixed_180_70_val49")
 IMAGE_EXTS = {".bmp", ".png", ".jpg", ".jpeg", ".tif", ".tiff", ".npy"}
 STAGE_COUNTS = {
-    "S0": {"train_normal": 50, "train_anomaly": 0, "calib_normal": 100, "calib_anomaly": 40, "test_normal": 180, "test_anomaly": 79},
-    "S1": {"train_normal": 100, "train_anomaly": 1, "calib_normal": 100, "calib_anomaly": 40, "test_normal": 180, "test_anomaly": 79},
-    "S2": {"train_normal": 150, "train_anomaly": 3, "calib_normal": 100, "calib_anomaly": 40, "test_normal": 180, "test_anomaly": 79},
-    "S3": {"train_normal": 200, "train_anomaly": 5, "calib_normal": 100, "calib_anomaly": 40, "test_normal": 180, "test_anomaly": 79},
-    "S4": {"train_normal": 300, "train_anomaly": 10, "calib_normal": 100, "calib_anomaly": 40, "test_normal": 180, "test_anomaly": 79},
-    "S5": {"train_normal": 400, "train_anomaly": 20, "calib_normal": 100, "calib_anomaly": 40, "test_normal": 180, "test_anomaly": 79},
-    "S6": {"train_normal": 420, "train_anomaly": 40, "calib_normal": 100, "calib_anomaly": 40, "test_normal": 180, "test_anomaly": 79},
-    "S7": {"train_normal": 420, "train_anomaly": 60, "calib_normal": 100, "calib_anomaly": 40, "test_normal": 180, "test_anomaly": 79},
-    "S8": {"train_normal": 420, "train_anomaly": 80, "calib_normal": 100, "calib_anomaly": 40, "test_normal": 180, "test_anomaly": 79},
+    "S0": {"train_normal": 50, "train_anomaly": 0, "calib_normal": 100, "calib_anomaly": 49, "test_normal": 180, "test_anomaly": 70},
+    "S1": {"train_normal": 100, "train_anomaly": 1, "calib_normal": 100, "calib_anomaly": 49, "test_normal": 180, "test_anomaly": 70},
+    "S2": {"train_normal": 150, "train_anomaly": 3, "calib_normal": 100, "calib_anomaly": 49, "test_normal": 180, "test_anomaly": 70},
+    "S3": {"train_normal": 200, "train_anomaly": 5, "calib_normal": 100, "calib_anomaly": 49, "test_normal": 180, "test_anomaly": 70},
+    "S4": {"train_normal": 300, "train_anomaly": 10, "calib_normal": 100, "calib_anomaly": 49, "test_normal": 180, "test_anomaly": 70},
+    "S5": {"train_normal": 400, "train_anomaly": 20, "calib_normal": 100, "calib_anomaly": 49, "test_normal": 180, "test_anomaly": 70},
+    "S6": {"train_normal": 420, "train_anomaly": 40, "calib_normal": 100, "calib_anomaly": 49, "test_normal": 180, "test_anomaly": 70},
+    "S7": {"train_normal": 420, "train_anomaly": 60, "calib_normal": 100, "calib_anomaly": 49, "test_normal": 180, "test_anomaly": 70},
+    "S8": {"train_normal": 420, "train_anomaly": 80, "calib_normal": 100, "calib_anomaly": 49, "test_normal": 180, "test_anomaly": 70},
 }
 
 
@@ -95,7 +95,7 @@ def main() -> None:
         + rel_images(source_class_root / "test/defect", source_class_root)
     )
     need_normal = 420 + 100 + 180
-    need_anomaly = 80 + 40 + 79
+    need_anomaly = 80 + 49 + 70
     if len(normal_pool) < need_normal:
         raise ValueError(f"Need {need_normal} normal samples, got {len(normal_pool)}")
     if len(anomaly_pool) < need_anomaly:
@@ -105,8 +105,8 @@ def main() -> None:
     calib_normal = normal_pool[420:520]
     test_normal = normal_pool[520:700]
     train_anomaly_pool = anomaly_pool[:80]
-    calib_anomaly = anomaly_pool[80:120]
-    test_anomaly = anomaly_pool[120:199]
+    calib_anomaly = anomaly_pool[80:129]
+    test_anomaly = anomaly_pool[129:199]
 
     assert_disjoint({
         "train_normal_pool": train_normal_pool,
@@ -153,7 +153,7 @@ def main() -> None:
         "alias": args.alias,
         "source_class_root": str(source_class_root),
         "split_root": str(args.output_root),
-        "split_policy": "20260519_fixed_counts_cumulative_train_fixed_calib_test_180_79",
+        "split_policy": "20260529_fixed_counts_cumulative_train_fixed_calib_test_180_70_49",
         "stage_specs": stage_specs,
         "data_inventory": {
             "normal_total": len(normal_pool),

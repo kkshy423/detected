@@ -1,0 +1,26 @@
+# 20260606_preprocess_equivalence_and_paired_benchmark_v1 提交清单
+
+- job_name: `prep_equiv_pair`
+- qsub_job_id: `210549.Ghead`
+- launcher: `/ghome/huangjd/code/detected/adpretrain_bridge/pbs/generated_run/run_20260606_preprocess_equivalence_and_paired_benchmark_v1.sh`
+- pbs: `/ghome/huangjd/code/detected/adpretrain_bridge/pbs/generated_submit/20260606_preprocess_equivalence_and_paired_benchmark_v1.pbs`
+- resource_line: `#PBS -l nodes=1:gpus=1:a`
+- script: `/ghome/huangjd/code/detected/adpretrain_bridge/benchmark_preprocess_equivalence_paired.py`
+- output_root: `/ghome/huangjd/code/detected/adpretrain_bridge/output/20260606_preprocess_equivalence_and_paired_benchmark_v1`
+- stage_root: `/gdata1/huangjd/data/xidun_qm_xiepai_6_1_adpretrain_dino_large_val_threshold_cache/stage_roots_plain_dino_large_norm_val49/S8`
+- ahl_weights: `/ghome/huangjd/code/detected/adpretrain_bridge/output/20260529_ahl_dino_large_180_70_val49_stage_v1/stages/S8/ahl/models_qiumianxiepai_ctest.pkl`
+- projector_checkpoint: `/ghome/huangjd/code/detected/ADPretrain/checkpoints/dino-large/checkpoints_img_norm.pth`
+- threshold_policy: `strategy_mild_stage_v2_1_safe`
+- fixed_threshold_source: `cpu_calib`
+- warmup: `5`
+- n_ref: `5`
+- device: `cuda:0`
+- output_files:
+  - `preprocess_equivalence_summary.md`
+  - `preprocess_equivalence_rows.csv`
+  - `score_diff_rows.csv`
+  - `prediction_changed_samples.csv`
+  - `paired_latency_summary.md`
+  - `paired_latency_rows.csv`
+  - `backend_calibrated_metrics.md`
+  - `config_snapshot.json`

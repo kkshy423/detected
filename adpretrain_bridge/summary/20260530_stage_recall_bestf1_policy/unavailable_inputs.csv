@@ -1,0 +1,2 @@
+method,stage,missing_file
+YOLO26s-eval,S0,output/20260529_yolo26s_cls_fixed_180_70_val49_eval_only/stages/S0/metrics/scores.csv

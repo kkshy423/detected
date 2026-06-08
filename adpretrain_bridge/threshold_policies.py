@@ -150,6 +150,26 @@ def constrained_recall_threshold(
     return row
 
 
+def best_f1_with_fpr_cap(labels: np.ndarray, scores: np.ndarray, fpr_cap: float) -> Dict[str, float]:
+    candidates = []
+    for threshold in np.unique(scores):
+        row = metric_at(labels, scores, float(threshold))
+        row["calibration_fpr"] = float(fpr_from_metric(row))
+        candidates.append(row)
+    strict = [r for r in candidates if r["calibration_fpr"] <= fpr_cap]
+    if strict:
+        row = max(strict, key=lambda r: (r["f1"], r["precision"], -r["calibration_fpr"], r["threshold"]))
+        rule = "max_f1_with_fpr_cap"
+    else:
+        row = best_f1_threshold(labels, scores)
+        row["calibration_fpr"] = float(fpr_from_metric(row))
+        rule = "fallback_validation_best_f1"
+    row = dict(row)
+    row["fpr_cap"] = float(fpr_cap)
+    row["selection_rule"] = rule
+    return row
+
+
 def mild_stage_v2_1_safe_threshold(labels: np.ndarray, scores: np.ndarray, stage: Optional[str]) -> Dict[str, float]:
     idx = stage_index(stage)
     if idx is None or idx <= 2:
@@ -159,8 +179,9 @@ def mild_stage_v2_1_safe_threshold(labels: np.ndarray, scores: np.ndarray, stage
         row = constrained_recall_threshold(labels, scores, 0.85, 0.10, "strategy_mild_stage_v2_1_safe")
         row["source_policy"] = "mild_recall85_fpr10"
     else:
-        row = constrained_recall_threshold(labels, scores, 0.80, 0.10, "strategy_mild_stage_v2_1_safe")
-        row["source_policy"] = "late_recall80_fpr10"
+        row = best_f1_with_fpr_cap(labels, scores, 0.10)
+        row["policy_family"] = "strategy_mild_stage_v2_1_safe"
+        row["source_policy"] = "late_best_f1_fpr10"
     row["stage"] = "" if stage is None else str(stage)
     return row
 

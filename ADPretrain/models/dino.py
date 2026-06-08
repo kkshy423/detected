@@ -1,5 +1,7 @@
 import os
 import math
+from pathlib import Path
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -8,6 +10,9 @@ from .dinov2.models import vision_transformer as vision_transformer_dinov2
 
 
 _WEIGHTS_DIR = "./models/dinov2/weights"
+_LOCAL_WEIGHTS = {
+    "dinov2_vit_large_14": Path("/gdata1/huangjd/model/dinov2-large/dinov2_vitl14_pretrain.pth"),
+}
 os.makedirs(_WEIGHTS_DIR, exist_ok=True)
 
 
@@ -77,6 +82,23 @@ class DinoModel(nn.Module):
 def load(name):
     arch, patchsize = name.split("_")[-2], name.split("_")[-1]
     if "v2" in name:
+        local_ckpt = _LOCAL_WEIGHTS.get(name)
+        if local_ckpt is not None and local_ckpt.exists():
+            ckpt_pth = str(local_ckpt)
+            if "reg" in name:
+                model = vision_transformer_dinov2.__dict__[f'vit_{arch}'](patch_size=int(patchsize), img_size=518,
+                                                                            block_chunks=0, init_values=1e-8,
+                                                                            num_register_tokens=4,
+                                                                            interpolate_antialias=False,
+                                                                            interpolate_offset=0.1)
+            else:
+                model = vision_transformer_dinov2.__dict__[f'vit_{arch}'](patch_size=int(patchsize), img_size=518,
+                                                                            block_chunks=0, init_values=1e-8,
+                                                                            interpolate_antialias=False,
+                                                                            interpolate_offset=0.1)
+            state_dict = torch.load(ckpt_pth, map_location='cpu')
+            model.load_state_dict(state_dict, strict=False)
+            return model
         if "reg" in name:
             model = vision_transformer_dinov2.__dict__[f'vit_{arch}'](patch_size=int(patchsize), img_size=518,
                                                                         block_chunks=0, init_values=1e-8,

@@ -14,12 +14,13 @@ SOURCE_DATASET_ROOT = SOURCE_CLASS_ROOT.parent
 REFERENCE_DATASET_ROOT = SOURCE_DATASET_ROOT
 ALIAS_CLASS = "models_qiumianxiepai"
 SPLIT_ROOT = Path("/ghome/huangjd/code/detected/adpretrain_bridge/splits/qm_xiepai_fewshot")
-CACHE_BASE = Path("/gdata1/huangjd/data/xidun_qm_xiepai_adpretrain_clip_b16_fewshot_cache")
+CACHE_BASE = Path("/gdata1/huangjd/data/xidun_qm_xiepai_adpretrain_dino_large_fewshot_cache")
 BRIDGE_ROOT = Path("/ghome/huangjd/code/detected/adpretrain_bridge")
 AHL_ROOT = Path("/ghome/huangjd/code/detected/AHL")
 ADPRETRAIN_ROOT = Path("/ghome/huangjd/code/detected/ADPretrain")
-OFFICIAL_CLIP_PROJECTOR = ADPRETRAIN_ROOT / "checkpoints/clip-base/checkpoints_img_angle.pth"
-MAIN_DOC = BRIDGE_ROOT / "qm_xiepai_fewshot_clip_b16_chmm.md"
+OFFICIAL_CLIP_PROJECTOR = ADPRETRAIN_ROOT / "checkpoints/dino-large/checkpoints_img_norm.pth"
+DEFAULT_BACKBONE = "dinov2-large"
+MAIN_DOC = BRIDGE_ROOT / "qm_xiepai_fewshot_dino_large.md"
 
 
 class StageSpec(object):

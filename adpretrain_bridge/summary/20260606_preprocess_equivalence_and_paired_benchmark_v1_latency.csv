@@ -1,0 +1,26 @@
+phase,cpu_mean_ms,cpu_median_ms,cpu_p90_ms,cpu_p95_ms,cpu_max_ms,gpu_mean_ms,gpu_median_ms,gpu_p90_ms,gpu_p95_ms,gpu_max_ms,production_note
+file_end_to_end_ms,102.46,91.83,131.27,137.31,388.04,72.74,49.37,114.96,123.49,301.08,includes CPU PIL decode; not core production-preloaded-image latency
+decoded_image_to_threshold_ms,92.18,82.65,121.72,126.56,367.48,62.47,39.94,106.34,109.73,138.69,primary production-preloaded-image estimate
+tensor_to_threshold_ms,56.85,29.56,101.11,103.20,120.29,55.01,29.22,99.34,100.68,110.94,ADP/AHL/threshold after encoder input tensor is ready
+image_load_decode_ms,10.27,7.63,9.79,12.33,261.44,10.27,7.63,9.79,12.33,261.44,reported only; ignored for production core latency
+preprocess_total_ms,35.33,25.73,54.32,60.71,331.17,7.46,5.28,14.60,20.60,96.00,decoded image to encoder input tensor
+cpu_resize_ms,29.13,17.98,51.55,56.19,63.68,0.00,0.00,0.00,0.00,0.00,CPU-PIL baseline only
+cpu_crop_ms,0.12,0.11,0.17,0.19,0.34,0.00,0.00,0.00,0.00,0.00,CPU-PIL baseline only
+cpu_to_tensor_ms,5.11,0.75,4.83,23.26,211.83,0.00,0.00,0.00,0.00,0.00,CPU-PIL baseline only
+cpu_normalize_ms,0.75,0.31,0.41,0.48,101.42,0.00,0.00,0.00,0.00,0.00,CPU-PIL baseline only
+h2d_copy_ms,0.22,0.22,0.26,0.29,0.39,0.00,0.00,0.00,0.00,0.00,CPU-PIL baseline only
+pil_to_tensor_cpu_ms,0.00,0.00,0.00,0.00,0.00,4.96,3.46,9.78,14.65,36.86,GPU tensor path still has CPU PIL to uint8 tensor step
+raw_h2d_copy_ms,0.00,0.00,0.00,0.00,0.00,1.61,1.06,1.17,1.22,78.27,GPU tensor path raw uint8 H2D
+gpu_cast_scale_ms,0.00,0.00,0.00,0.00,0.00,0.20,0.18,0.20,0.22,6.17,GPU tensor path
+gpu_resize_ms,0.00,0.00,0.00,0.00,0.00,0.56,0.37,0.44,0.53,24.36,GPU tensor path bicubic antialias
+gpu_center_crop_ms,0.00,0.00,0.00,0.00,0.00,0.06,0.06,0.08,0.09,0.19,GPU tensor path
+gpu_normalize_ms,0.00,0.00,0.00,0.00,0.00,0.06,0.06,0.08,0.09,0.16,GPU tensor path
+encoder_ms,44.67,18.36,88.80,90.74,107.03,43.14,18.23,86.65,88.67,98.67,model phase; backend medians are effectively aligned after alternating order
+adp_reference_match_ms,1.24,0.80,1.49,1.55,67.04,0.95,0.76,1.51,1.59,2.74,model phase
+residual_ms,0.09,0.08,0.14,0.15,0.18,0.09,0.07,0.14,0.15,0.17,model phase
+projector_ms,7.59,7.45,7.96,8.11,8.47,7.59,7.45,8.08,8.16,9.41,model phase
+compress_ms,1.06,0.84,0.92,0.94,50.82,0.86,0.84,0.93,0.94,0.99,model phase
+ahl_reference_attach_ms,0.07,0.06,0.11,0.12,0.14,0.07,0.06,0.11,0.13,0.16,model phase
+ahl_forward_ms,2.00,1.72,2.91,3.33,3.98,2.17,1.64,3.18,3.42,50.35,model phase
+score_postprocess_ms,0.08,0.07,0.11,0.14,0.16,0.08,0.07,0.11,0.13,0.15,model phase
+threshold_ms,0.05,0.05,0.07,0.08,0.18,0.05,0.05,0.07,0.08,0.10,model phase

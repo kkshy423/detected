@@ -1,0 +1,52 @@
+# 20260607_cpu_gpu_uint8_full_stage_eval_v1 — Time Table
+
+Timed over steady test images (batch=1, GPU-synced). ms.
+
+| backend | phase | mean | median | p90 | p95 | max |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| cpu_pil | adp_decoded_image_to_threshold_ms | 133.94 | 78.22 | 312.17 | 398.82 | 575.69 |
+| cpu_pil | ahl_decoded_image_to_threshold_ms | 133.03 | 76.29 | 311.67 | 398.34 | 575.06 |
+| cpu_pil | preprocess_total_ms | 81.61 | 21.74 | 275.02 | 353.27 | 461.13 |
+| cpu_pil | adp_tensor_to_threshold_ms | 52.33 | 45.61 | 86.04 | 114.05 | 114.96 |
+| cpu_pil | ahl_tensor_to_threshold_ms | 51.42 | 44.26 | 83.84 | 113.61 | 113.93 |
+| cpu_pil | encoder_ms | 37.90 | 30.36 | 70.15 | 100.61 | 101.34 |
+| cpu_pil | adp_reference_match_ms | 1.02 | 0.95 | 1.48 | 1.51 | 1.56 |
+| cpu_pil | residual_ms | 0.10 | 0.09 | 0.14 | 0.14 | 0.16 |
+| cpu_pil | projector_ms | 9.24 | 8.36 | 8.61 | 9.90 | 31.94 |
+| cpu_pil | adp_only_postprocess_ms | 4.06 | 3.56 | 6.11 | 6.46 | 6.59 |
+| cpu_pil | compress_ms | 0.87 | 0.86 | 0.91 | 0.95 | 1.04 |
+| cpu_pil | ahl_forward_per_stage_ms | 2.29 | 2.17 | 2.85 | 2.96 | 4.06 |
+| cpu_pil | cpu_resize_ms | 20.20 | 18.44 | 24.05 | 25.01 | 53.39 |
+| cpu_pil | cpu_crop_ms | 0.11 | 0.10 | 0.12 | 0.13 | 0.14 |
+| cpu_pil | cpu_to_tensor_ms | 34.71 | 0.95 | 130.09 | 161.22 | 231.38 |
+| cpu_pil | cpu_normalize_ms | 26.31 | 0.40 | 124.22 | 188.60 | 215.05 |
+| cpu_pil | h2d_copy_ms | 0.29 | 0.23 | 0.41 | 0.45 | 0.92 |
+| cpu_pil | pil_to_tensor_cpu_ms | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| cpu_pil | raw_h2d_copy_ms | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| cpu_pil | gpu_cast_scale_ms | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| cpu_pil | gpu_resize_ms | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| cpu_pil | gpu_center_crop_ms | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| cpu_pil | gpu_normalize_ms | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| gpu_tensor_uint8_aa_true | adp_decoded_image_to_threshold_ms | 85.58 | 85.54 | 97.91 | 152.27 | 163.50 |
+| gpu_tensor_uint8_aa_true | ahl_decoded_image_to_threshold_ms | 84.67 | 84.89 | 97.16 | 150.87 | 161.81 |
+| gpu_tensor_uint8_aa_true | preprocess_total_ms | 26.45 | 17.83 | 59.09 | 61.27 | 64.92 |
+| gpu_tensor_uint8_aa_true | adp_tensor_to_threshold_ms | 59.13 | 63.36 | 79.59 | 93.78 | 98.57 |
+| gpu_tensor_uint8_aa_true | ahl_tensor_to_threshold_ms | 58.21 | 61.96 | 78.63 | 91.69 | 97.33 |
+| gpu_tensor_uint8_aa_true | encoder_ms | 42.34 | 45.09 | 65.67 | 68.88 | 83.43 |
+| gpu_tensor_uint8_aa_true | adp_reference_match_ms | 1.13 | 1.06 | 1.59 | 1.66 | 1.73 |
+| gpu_tensor_uint8_aa_true | residual_ms | 0.10 | 0.10 | 0.15 | 0.17 | 0.17 |
+| gpu_tensor_uint8_aa_true | projector_ms | 11.20 | 8.38 | 10.98 | 20.86 | 63.69 |
+| gpu_tensor_uint8_aa_true | adp_only_postprocess_ms | 4.35 | 3.87 | 5.90 | 6.70 | 12.42 |
+| gpu_tensor_uint8_aa_true | compress_ms | 0.87 | 0.86 | 0.93 | 0.94 | 1.01 |
+| gpu_tensor_uint8_aa_true | ahl_forward_per_stage_ms | 2.57 | 2.22 | 4.06 | 4.22 | 5.25 |
+| gpu_tensor_uint8_aa_true | cpu_resize_ms | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| gpu_tensor_uint8_aa_true | cpu_crop_ms | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| gpu_tensor_uint8_aa_true | cpu_to_tensor_ms | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| gpu_tensor_uint8_aa_true | cpu_normalize_ms | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| gpu_tensor_uint8_aa_true | h2d_copy_ms | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| gpu_tensor_uint8_aa_true | pil_to_tensor_cpu_ms | 24.15 | 16.08 | 56.22 | 58.45 | 61.98 |
+| gpu_tensor_uint8_aa_true | raw_h2d_copy_ms | 1.14 | 1.14 | 1.31 | 1.35 | 1.37 |
+| gpu_tensor_uint8_aa_true | gpu_cast_scale_ms | 0.24 | 0.08 | 0.17 | 0.19 | 5.19 |
+| gpu_tensor_uint8_aa_true | gpu_resize_ms | 0.73 | 0.62 | 1.09 | 1.12 | 1.34 |
+| gpu_tensor_uint8_aa_true | gpu_center_crop_ms | 0.11 | 0.09 | 0.17 | 0.17 | 0.18 |
+| gpu_tensor_uint8_aa_true | gpu_normalize_ms | 0.10 | 0.08 | 0.16 | 0.16 | 0.17 |

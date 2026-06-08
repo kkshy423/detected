@@ -1,0 +1,2 @@
+image_path,label,bridge_score,bridge_threshold,bridge_pred,bridge_margin,yolo_score,yolo_threshold,yolo_pred,yolo_margin,error_type
+/gdata1/huangjd/data/yolo_qm_xiepai_6_1_cls_val_threshold_20260529/S6/test/defect/test_anomaly__test__defect__2_637.bmp,1,1.8748297177034754,2.17605756975357,0,-0.3012278520500944,0.010235974565148354,0.022553298622369766,0,-0.012317324057221413,common_fn

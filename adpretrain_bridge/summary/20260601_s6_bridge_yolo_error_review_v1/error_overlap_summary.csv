@@ -1,0 +1,11 @@
+item,count
+bridge FP,9
+bridge FN,7
+YOLO FP,20
+YOLO FN,2
+bridge missed but YOLO hit,6
+YOLO FP but bridge TN,17
+common FN,1
+common FP,3
+bridge FP but YOLO TN,6
+YOLO missed but bridge hit,1

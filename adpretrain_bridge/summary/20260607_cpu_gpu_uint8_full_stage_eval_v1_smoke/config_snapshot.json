@@ -1,0 +1,30 @@
+{
+  "task": "20260607_cpu_gpu_uint8_full_stage_eval_v1",
+  "stages": [
+    "S7",
+    "S8"
+  ],
+  "backends": [
+    "cpu_pil",
+    "gpu_tensor_uint8_aa_true"
+  ],
+  "adp_num_ref": 8,
+  "ahl_num_ref": 5,
+  "feature_levels": 4,
+  "bridge_alpha": {
+    "S7": 0.35,
+    "S8": 0.7
+  },
+  "manifest_stage": "S8",
+  "warmup": 2,
+  "max_test": 20,
+  "seed": 0,
+  "device": "cuda:0",
+  "tf32": false,
+  "counts": {
+    "train_ref_pool": 420,
+    "calib": 40,
+    "test": 40
+  },
+  "torch_version": "2.4.1+cu121"
+}

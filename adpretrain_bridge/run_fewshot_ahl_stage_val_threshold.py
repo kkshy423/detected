@@ -53,6 +53,10 @@ def parse_args():
     p.add_argument("--ahl-subdir", default="ahl")
     p.add_argument("--reuse-stage-root", action="store_true")
     p.add_argument("--reuse-model-path", type=Path, default=None, help="existing trained AHL weights; when present, skip training and run eval-only")
+    p.add_argument("--ahl-production-like-fast-path", action="store_true",
+                   help="run AHL eval-only latency with production-like fast path; result.txt is disabled unless --ahl-keep-fast-result-dump is set")
+    p.add_argument("--ahl-keep-fast-result-dump", action="store_true",
+                   help="write result.txt even when --ahl-production-like-fast-path is enabled")
     p.add_argument("--prepare-only", action="store_true")
     return p.parse_args()
 
@@ -181,6 +185,10 @@ def run_ahl(args, stage_dataset_root: Path, train_anomaly: int) -> None:
         cmd.extend(["--auxiliary", "False"])
     if train_skipped:
         cmd.extend(["--eval_only", "--load_weights", str(reuse_model_path), "--preload_ref_eval"])
+        if args.ahl_production_like_fast_path:
+            cmd.append("--production_like_fast_path")
+            if args.ahl_keep_fast_result_dump:
+                cmd.append("--keep_fast_result_dump")
     config_path = config_dir(args.output_root) / f"{args.stage}_run_config.json"
     write_json(config_path, {
         "stage": args.stage,
@@ -191,6 +199,8 @@ def run_ahl(args, stage_dataset_root: Path, train_anomaly: int) -> None:
         "execution_mode": "eval_only_reuse_model" if train_skipped else "train_then_eval",
         "train_skipped": train_skipped,
         "reuse_model_path": str(reuse_model_path) if train_skipped else None,
+        "ahl_production_like_fast_path": bool(args.ahl_production_like_fast_path),
+        "ahl_keep_fast_result_dump": bool(args.ahl_keep_fast_result_dump),
         "threshold_policy": "strategy_mild_stage_v2_1_safe primary; production_normal_p95 and val_best_f1 kept for comparison only",
     })
     print("RUN", " ".join(cmd), flush=True)
@@ -234,6 +244,8 @@ def run_ahl(args, stage_dataset_root: Path, train_anomaly: int) -> None:
         "time_total_typical_ms": time_total_typical,
         "time_total_p90_ms": time_total_p90,
         "time_total_note": "Online inference estimate sums projected ADPretrain feature generation and AHL processing. Feature file saving is excluded; eval-only AHL preloads reference batches to approximate deployment.",
+        "ahl_production_like_fast_path": bool(args.ahl_production_like_fast_path),
+        "ahl_keep_fast_result_dump": bool(args.ahl_keep_fast_result_dump),
         "ahl_subdir": args.ahl_subdir,
         "feature_runtime_file": str(feature_runtime_path) if feature_runtime_path.exists() else None,
         "feature_runtime": feature_runtime,

@@ -1,0 +1,4 @@
+image_path,label,bridge_score,bridge_threshold,bridge_pred,bridge_margin,yolo_score,yolo_threshold,yolo_pred,yolo_margin,error_type
+/gdata1/huangjd/data/yolo_qm_xiepai_6_1_cls_val_threshold_20260529/S6/test/good/test_normal__test__good__4_107.bmp,0,5.200879013215555,2.17605756975357,1,3.0248214434619856,0.7800247073173523,0.022553298622369766,1,0.7574714086949825,common_fp
+/gdata1/huangjd/data/yolo_qm_xiepai_6_1_cls_val_threshold_20260529/S6/test/good/test_normal__test__good__4_116.bmp,0,4.196488698376782,2.17605756975357,1,2.020431128623212,0.2858246862888336,0.022553298622369766,1,0.26327138766646385,common_fp
+/gdata1/huangjd/data/yolo_qm_xiepai_6_1_cls_val_threshold_20260529/S6/test/good/test_normal__test__good__4_70.bmp,0,2.8794927591042394,2.17605756975357,1,0.7034351893506696,0.031484413892030716,0.022553298622369766,1,0.00893111526966095,common_fp

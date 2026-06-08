@@ -17,7 +17,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 import numpy as np
 from sklearn.metrics import average_precision_score, roc_auc_score
 
-from threshold_policies import best_f1_threshold, metric_at
+from threshold_policies import best_f1_threshold, best_f1_with_fpr_cap, metric_at
 
 STAGES = [f"S{i}" for i in range(9)]
 DEFAULT_AHL = Path("/ghome/huangjd/code/detected/adpretrain_bridge/output/20260519_ahl_plain_fixed_180_79_stage_v3")
@@ -125,8 +125,8 @@ def safe_v2_1(labels: np.ndarray, scores: np.ndarray, stage: str) -> Dict[str, f
         row = constrained_recall(labels, scores, 0.85, 0.10)
         source = "mild_recall85_fpr10"
     else:
-        row = constrained_recall(labels, scores, 0.80, 0.10)
-        source = "late_recall80_fpr10"
+        row = best_f1_with_fpr_cap(labels, scores, 0.10)
+        source = "late_best_f1_fpr10"
     row["policy_family"] = "strategy_mild_stage_v2_1_safe"
     row["source_policy"] = source
     row["stage"] = stage
