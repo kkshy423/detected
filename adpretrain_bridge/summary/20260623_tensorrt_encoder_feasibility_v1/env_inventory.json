@@ -1,0 +1,50 @@
+{
+  "task_name": "20260623_tensorrt_encoder_feasibility_v1",
+  "python": "/gdata1/huangjd/miniconda3/envs/adpretrain_ahl_bridge/bin/python",
+  "platform": "Linux-3.10.0-1160.119.1.el7.x86_64-x86_64-with-glibc2.17",
+  "cwd": "/ghome/huangjd/code/detected/adpretrain_bridge",
+  "torch": "2.4.1+cu121",
+  "torch_cuda": "12.1",
+  "torch_cudnn": 90100,
+  "torchvision": "0.19.1+cu121",
+  "pillow": "10.4.0",
+  "tensorrt_python": null,
+  "onnx_python": null,
+  "onnxruntime_python": null,
+  "trtexec_path": null,
+  "nvcc_path": "/usr/local/cuda/bin/nvcc",
+  "tf32": {
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true
+  },
+  "cuda_visible_devices": null,
+  "nvidia_smi": {
+    "cmd": [
+      "nvidia-smi"
+    ],
+    "returncode": 0,
+    "stdout": "Tue Jun 23 10:45:53 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 550.90.07              Driver Version: 550.90.07      CUDA Version: 12.4     |\n|-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA A40                     On  |   00000000:2A:00.0 Off |                    0 |\n|  0%   53C    P0            124W /  300W |   42709MiB /  46068MiB |     76%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n                                                                                         \n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n+-----------------------------------------------------------------------------------------+",
+    "stderr": ""
+  },
+  "nvcc_version": {
+    "cmd": [
+      "/usr/local/cuda/bin/nvcc",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2016 NVIDIA Corporation\nBuilt on Tue_Jan_10_13:22:03_CST_2017\nCuda compilation tools, release 8.0, V8.0.61",
+    "stderr": ""
+  },
+  "trtexec_version": null,
+  "gpu": [
+    {
+      "index": 0,
+      "name": "NVIDIA A40",
+      "capability": [
+        8,
+        6
+      ],
+      "total_memory_bytes": 47608692736
+    }
+  ]
+}
