@@ -1,0 +1,12 @@
+backend,phase,median_ms
+cpu_pil,cpu_resize_ms,17.98
+cpu_pil,cpu_crop_ms,0.11
+cpu_pil,cpu_to_tensor_ms,0.75
+cpu_pil,cpu_normalize_ms,0.31
+cpu_pil,h2d_copy_ms,0.22
+gpu_tensor_uint8_aa_true,pil_to_tensor_cpu_ms,3.46
+gpu_tensor_uint8_aa_true,raw_h2d_copy_ms,1.06
+gpu_tensor_uint8_aa_true,gpu_cast_scale_ms,0.18
+gpu_tensor_uint8_aa_true,gpu_resize_ms,0.37
+gpu_tensor_uint8_aa_true,gpu_center_crop_ms,0.06
+gpu_tensor_uint8_aa_true,gpu_normalize_ms,0.06

@@ -1,0 +1,5 @@
+method,backend,core_total_ms_median,preprocess_ms,encoder_ms,adp_match_ms,residual_ms,projector_ms,compress_ms,ahl_forward_ms,postprocess_threshold_ms,source_check_total_ms
+ADP-only-DINO,cpu_pil,38.74,19.38,18.36,0.80,0.08,,,,0.12,48.43
+ADP-only-DINO,gpu_tensor_uint8_aa_true,24.10,4.92,18.23,0.76,0.07,,,,0.12,33.64
+AHL-DINO,cpu_pil,47.93,19.38,18.36,,,7.45,0.84,1.72,0.12,48.43
+AHL-DINO,gpu_tensor_uint8_aa_true,33.26,4.92,18.23,,,7.45,0.84,1.64,0.12,33.64
