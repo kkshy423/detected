@@ -7,9 +7,9 @@
 - Output target: multi-scale encoder features.
 - Explicitly not included: projector, ADP/AHL/bridge full-stage replacement, INT8, retraining, alpha changes, threshold policy changes.
 
-## Result
+## Initial Result
 
-This diagnostic stopped at the dependency gate. ONNX export and TensorRT engine build were not attempted because the runtime environment does not currently provide the required TensorRT/ONNX tooling.
+The initial TensorRT encoder diagnostic stopped at the dependency gate. ONNX export and TensorRT engine build were not attempted because the runtime environment did not provide the required TensorRT/ONNX tooling.
 
 ## Environment Inventory
 
@@ -24,19 +24,19 @@ This diagnostic stopped at the dependency gate. ONNX export and TensorRT engine 
 - Torchvision: `0.19.1+cu121`
 - Pillow: `10.4.0`
 - cuDNN: `90100`
-- TensorRT Python: unavailable
+- TensorRT Python: unavailable at initial diagnostic
 - `trtexec`: unavailable on `PATH`
-- ONNX Python: unavailable
+- ONNX Python: unavailable at initial diagnostic
 - ONNX Runtime Python: unavailable
 - `nvcc`: `/usr/local/cuda/bin/nvcc`
-- `nvcc --version`: CUDA `8.0`, which is stale relative to the active Torch CUDA runtime
-- TF32 before export/build path:
+- `nvcc --version`: CUDA `8.0`, stale relative to the active Torch CUDA runtime
+- TF32 at initial diagnostic:
   - `torch.backends.cuda.matmul.allow_tf32 = false`
   - `torch.backends.cudnn.allow_tf32 = true`
 
 Full raw inventory is in `env_inventory.json`.
 
-## Dependency Gate
+## Initial Dependency Gate
 
 Missing required components:
 
@@ -44,9 +44,9 @@ Missing required components:
 - TensorRT Python package not importable
 - `onnx` Python package not importable
 
-Per experiment rule, no dependencies were installed or modified.
+Per experiment rule, no dependencies were installed or modified during the initial diagnostic.
 
-## Export / Build / Equivalence / Latency
+## Initial Export / Build / Equivalence / Latency
 
 | Item | Status | Notes |
 | --- | --- | --- |
@@ -60,40 +60,81 @@ Per experiment rule, no dependencies were installed or modified.
 ## PBS Jobs
 
 - First job: `215341.Ghead`
-  - Failed before env inventory due to `tools/` script import path not including project root.
+  - Failed before environment inventory because the `tools/` script did not include project root on `sys.path`.
   - Fixed by adding `/ghome/huangjd/code/detected/adpretrain_bridge` to `sys.path` before importing `common`.
 - Retry job: `215342.Ghead`
-  - Completed the dependency gate and wrote this summary.
+  - Completed the dependency gate and wrote the initial summary.
 
-## Conclusion
+## 2026-06-24 Install Attempt
 
-- Export success: no, blocked before ONNX export.
-- TensorRT FP32 build success: no, blocked by missing TensorRT/ONNX tooling.
-- TensorRT FP16 build success: no, blocked by missing TensorRT/ONNX tooling.
+A minimal pip install was attempted in the existing main conda environment:
+
+```bash
+/gdata1/huangjd/miniconda3/envs/adpretrain_ahl_bridge/bin/python -m pip install --only-binary=:all: 'onnx==1.17.0' 'tensorrt==8.6.0'
+```
+
+Installed packages:
+
+- `onnx==1.17.0`
+- `tensorrt==8.6.0`
+- `protobuf==5.29.6`
+
+Post-install check:
+
+```json
+{
+  "onnx": "1.17.0",
+  "protobuf": "5.29.6",
+  "tensorrt_error": "ImportError('libcudnn.so.8: cannot open shared object file: No such file or directory')",
+  "torch": "2.4.1+cu121",
+  "torch_cuda": "12.1",
+  "torchvision": "0.19.1+cu121",
+  "trtexec_path": null
+}
+```
+
+Interpretation:
+
+- ONNX became importable.
+- TensorRT Python was installed but not usable because `tensorrt==8.6.0` requires `libcudnn.so.8`.
+- The main environment uses cuDNN 9 through the current PyTorch 2.4.1+cu121 stack.
+- The TensorRT wheel did not provide `trtexec`.
+- Downgrading or replacing cuDNN in the main ADP/AHL environment is not recommended.
+
+Detailed install notes are in `tensorrt_install_attempt_20260624.md`.
+
+## 2026-06-24 Rollback
+
+Because the attempted TensorRT install did not provide a usable TensorRT runtime and did not provide `trtexec`, the newly installed packages were removed from the main ADP/AHL environment:
+
+- removed `tensorrt==8.6.0`
+- removed `onnx==1.17.0`
+- removed `protobuf==5.29.6`
+
+Post-rollback checks:
+
+- torch import: OK (`2.4.1+cu121`)
+- torchvision import: OK (`0.19.1+cu121`)
+- TensorRT import: unavailable, as before
+- ONNX import: unavailable, as before
+- `trtexec`: unavailable, as before
+- `pip check`: no broken requirements found
+
+Post-rollback import details are in `post_rollback_import_check.json`.
+
+## Final Conclusion
+
+- ONNX export success: no.
+- TensorRT FP32 engine build success: no.
+- TensorRT FP16 engine build success: no.
 - FP32 equivalence: not evaluated.
 - FP16 acceleration: not evaluated.
-- Recommendation: do not start encoder drop-in full-stage diagnostics on this server environment yet. The next decision point is whether to provision a TensorRT-capable environment with compatible `trtexec`, TensorRT Python bindings, and ONNX support. Only after that should this same encoder-only diagnostic be rerun.
+- Main ADP/AHL conda environment status: preserved for normal ADP/AHL work after rollback.
+- Recommendation: do not continue TensorRT setup inside `adpretrain_ahl_bridge`. If TensorRT is pursued, create a separate TensorRT probe environment with a compatible TensorRT/cuDNN stack and a real `trtexec` binary, then rerun this encoder-only diagnostic there.
 
 ## Artifacts
 
 - Summary: `summary/20260623_tensorrt_encoder_feasibility_v1/`
 - Runs: `runs/20260623_tensorrt_encoder_feasibility_v1/`
 - Heavy artifacts: none produced.
-- No ONNX or TensorRT engine was generated.
-
-## 2026-06-24 install attempt update
-
-A minimal pip install was attempted in the existing conda environment:
-
-- onnx==1.17.0
-- 	ensorrt==8.6.0
-- protobuf==5.29.6
-
-Outcome:
-
-- ONNX is now importable.
-- TensorRT Python is installed but still not usable: import fails with libcudnn.so.8: cannot open shared object file.
-- 	rtexec is still unavailable.
-- The main environment uses cuDNN 9 through the existing PyTorch 2.4.1+cu121 stack, so downgrading cuDNN inside this environment is not recommended.
-
-Decision: do not continue TensorRT installation inside the main ADP/AHL environment. Use a separate TensorRT probe environment if this line is pursued further.
+- ONNX/engine files: none produced.

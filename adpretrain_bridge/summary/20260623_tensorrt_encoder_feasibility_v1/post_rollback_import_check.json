@@ -1,0 +1,10 @@
+{
+  "onnx_error": "ModuleNotFoundError(\"No module named 'onnx'\")",
+  "protobuf_error": "ModuleNotFoundError(\"No module named 'google.protobuf'\")",
+  "python": "/gdata1/huangjd/miniconda3/envs/adpretrain_ahl_bridge/bin/python",
+  "tensorrt_error": "ModuleNotFoundError(\"No module named 'tensorrt'\")",
+  "torch": "2.4.1+cu121",
+  "torch_cuda": "12.1",
+  "torchvision": "0.19.1+cu121",
+  "trtexec_path": null
+}
