@@ -1,0 +1,295 @@
+{
+  "build_manifest": {
+    "task_name": "20260624_tensorrt_encoder_fp32_precision_audit_v1",
+    "sample_count": 20,
+    "sample_paths": [
+      "val/good/1_746.bmp",
+      "val/good/1_764.bmp",
+      "val/good/1_768.bmp",
+      "val/good/1_771.bmp",
+      "val/good/1_784.bmp",
+      "val/good/1_807.bmp",
+      "val/good/1_833.bmp",
+      "val/good/1_838.bmp",
+      "val/good/1_845.bmp",
+      "val/good/1_848.bmp",
+      "test/defect/2_58.bmp",
+      "test/defect/2_62.bmp",
+      "test/defect/2_63.bmp",
+      "test/defect/2_65.bmp",
+      "test/defect/2_72.bmp",
+      "test/defect/2_74.bmp",
+      "test/defect/2_80.bmp",
+      "test/defect/2_81.bmp",
+      "test/defect/2_84.bmp",
+      "test/defect/2_89.bmp"
+    ],
+    "onnx_meta": {
+      "onnx_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/onnx/dinov2_large_encoder_multiscale_b1_224.onnx",
+      "output_names": [
+        "feat_0",
+        "feat_1",
+        "feat_2",
+        "feat_3"
+      ],
+      "output_shapes": [
+        [
+          1,
+          1024,
+          16,
+          16
+        ],
+        [
+          1,
+          1024,
+          16,
+          16
+        ],
+        [
+          1,
+          1024,
+          16,
+          16
+        ],
+        [
+          1,
+          1024,
+          16,
+          16
+        ]
+      ]
+    },
+    "engines": [
+      {
+        "variant": "trt_fp32_default",
+        "disable_tf32_requested": false,
+        "strong_fp32_constraints_requested": false,
+        "builder": "tensorrt_python",
+        "tf32_default_before_edit": true,
+        "strong_fp32_constraints_applied": false,
+        "strong_fp32_constraint_flags": [],
+        "flags_after_edit": [
+          "TF32"
+        ],
+        "tf32_enabled_after_edit": true,
+        "returncode": 0,
+        "elapsed_s": 50.098482286557555,
+        "engine_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/engines/trt_fp32_default.engine",
+        "log_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/logs/trt_fp32_default.log",
+        "engine_exists": true,
+        "engine_size_bytes": 1219133236
+      },
+      {
+        "variant": "trt_fp32_tf32_disabled",
+        "disable_tf32_requested": true,
+        "strong_fp32_constraints_requested": false,
+        "builder": "tensorrt_python",
+        "tf32_default_before_edit": true,
+        "strong_fp32_constraints_applied": false,
+        "strong_fp32_constraint_flags": [],
+        "flags_after_edit": [],
+        "tf32_enabled_after_edit": false,
+        "returncode": 0,
+        "elapsed_s": 36.88773902691901,
+        "engine_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/engines/trt_fp32_tf32_disabled.engine",
+        "log_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/logs/trt_fp32_tf32_disabled.log",
+        "engine_exists": true,
+        "engine_size_bytes": 1219338452
+      },
+      {
+        "variant": "trt_fp32_tf32_disabled_strict",
+        "disable_tf32_requested": true,
+        "strong_fp32_constraints_requested": true,
+        "builder": "tensorrt_python",
+        "tf32_default_before_edit": true,
+        "strong_fp32_constraints_applied": true,
+        "strong_fp32_constraint_flags": [
+          "OBEY_PRECISION_CONSTRAINTS",
+          "STRICT_TYPES"
+        ],
+        "flags_after_edit": [
+          "OBEY_PRECISION_CONSTRAINTS"
+        ],
+        "tf32_enabled_after_edit": false,
+        "returncode": 0,
+        "elapsed_s": 39.67139180749655,
+        "engine_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/engines/trt_fp32_tf32_disabled_strict.engine",
+        "log_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/logs/trt_fp32_tf32_disabled_strict.log",
+        "engine_exists": true,
+        "engine_size_bytes": 1219338452
+      }
+    ]
+  },
+  "latency_rows": [
+    {
+      "backend": "pytorch_tf32_off",
+      "warmup": 20,
+      "timed": 100,
+      "median_ms": 18.316166009753942,
+      "mean_ms": 18.30530544742942,
+      "p95_ms": 18.533387780189514,
+      "min_ms": 18.045341596007347,
+      "max_ms": 18.560045398771763
+    },
+    {
+      "backend": "trt_fp32_default",
+      "warmup": 20,
+      "timed": 100,
+      "median_ms": 7.007294334471226,
+      "mean_ms": 7.011575996875763,
+      "p95_ms": 7.049278542399406,
+      "min_ms": 6.950720213353634,
+      "max_ms": 7.308012805879116
+    },
+    {
+      "backend": "trt_fp32_tf32_disabled",
+      "warmup": 20,
+      "timed": 100,
+      "median_ms": 13.379667419940233,
+      "mean_ms": 13.38627285324037,
+      "p95_ms": 13.464505784213543,
+      "min_ms": 12.653090059757233,
+      "max_ms": 15.748665668070316
+    },
+    {
+      "backend": "trt_fp32_tf32_disabled_strict",
+      "warmup": 20,
+      "timed": 100,
+      "median_ms": 13.400549069046974,
+      "mean_ms": 16.25236241146922,
+      "p95_ms": 13.573509966954589,
+      "min_ms": 12.600853107869625,
+      "max_ms": 286.8037847802043
+    }
+  ],
+  "feature_diff_summary": [
+    {
+      "backend": "trt_fp32_default",
+      "feature_idx": 0,
+      "max_abs_max": 0.00199967622756958,
+      "mean_abs_mean": 5.42193422006676e-05,
+      "p95_abs_max": 0.00018146401271224022,
+      "cosine_min": 0.999998927116394,
+      "relative_l2_max": 0.0014785126550123096,
+      "n_samples": 20
+    },
+    {
+      "backend": "trt_fp32_default",
+      "feature_idx": 1,
+      "max_abs_max": 0.005877941846847534,
+      "mean_abs_mean": 0.00012598023677128366,
+      "p95_abs_max": 0.00032874051248654723,
+      "cosine_min": 0.9999983310699463,
+      "relative_l2_max": 0.001830464112572372,
+      "n_samples": 20
+    },
+    {
+      "backend": "trt_fp32_default",
+      "feature_idx": 2,
+      "max_abs_max": 0.07643890380859375,
+      "mean_abs_mean": 0.00047236453247023746,
+      "p95_abs_max": 0.001327165518887341,
+      "cosine_min": 0.9999985098838806,
+      "relative_l2_max": 0.001738803111948073,
+      "n_samples": 20
+    },
+    {
+      "backend": "trt_fp32_default",
+      "feature_idx": 3,
+      "max_abs_max": 0.30104827880859375,
+      "mean_abs_mean": 0.006011767964810133,
+      "p95_abs_max": 0.017724990844726562,
+      "cosine_min": 0.9999931454658508,
+      "relative_l2_max": 0.003801680402830243,
+      "n_samples": 20
+    },
+    {
+      "backend": "trt_fp32_tf32_disabled",
+      "feature_idx": 0,
+      "max_abs_max": 5.926936864852905e-06,
+      "mean_abs_mean": 6.405772516870911e-08,
+      "p95_abs_max": 2.0555307855829597e-07,
+      "cosine_min": 0.9999999403953552,
+      "relative_l2_max": 1.78815923845832e-06,
+      "n_samples": 20
+    },
+    {
+      "backend": "trt_fp32_tf32_disabled",
+      "feature_idx": 1,
+      "max_abs_max": 1.0579824447631836e-05,
+      "mean_abs_mean": 1.83807571829675e-07,
+      "p95_abs_max": 5.21540641784668e-07,
+      "cosine_min": 0.9999999403953552,
+      "relative_l2_max": 2.829198592735338e-06,
+      "n_samples": 20
+    },
+    {
+      "backend": "trt_fp32_tf32_disabled",
+      "feature_idx": 2,
+      "max_abs_max": 9.1552734375e-05,
+      "mean_abs_mean": 5.843781679004678e-07,
+      "p95_abs_max": 1.6093254089355469e-06,
+      "cosine_min": 0.9999998807907104,
+      "relative_l2_max": 2.07348307412758e-06,
+      "n_samples": 20
+    },
+    {
+      "backend": "trt_fp32_tf32_disabled",
+      "feature_idx": 3,
+      "max_abs_max": 0.0008983612060546875,
+      "mean_abs_mean": 5.498594850905647e-06,
+      "p95_abs_max": 1.537799835205078e-05,
+      "cosine_min": 0.9999998807907104,
+      "relative_l2_max": 3.5734792618313804e-06,
+      "n_samples": 20
+    },
+    {
+      "backend": "trt_fp32_tf32_disabled_strict",
+      "feature_idx": 0,
+      "max_abs_max": 5.926936864852905e-06,
+      "mean_abs_mean": 6.405772516870911e-08,
+      "p95_abs_max": 2.0555307855829597e-07,
+      "cosine_min": 0.9999999403953552,
+      "relative_l2_max": 1.78815923845832e-06,
+      "n_samples": 20
+    },
+    {
+      "backend": "trt_fp32_tf32_disabled_strict",
+      "feature_idx": 1,
+      "max_abs_max": 1.0579824447631836e-05,
+      "mean_abs_mean": 1.83807571829675e-07,
+      "p95_abs_max": 5.21540641784668e-07,
+      "cosine_min": 0.9999999403953552,
+      "relative_l2_max": 2.829198592735338e-06,
+      "n_samples": 20
+    },
+    {
+      "backend": "trt_fp32_tf32_disabled_strict",
+      "feature_idx": 2,
+      "max_abs_max": 9.1552734375e-05,
+      "mean_abs_mean": 5.843781679004678e-07,
+      "p95_abs_max": 1.6093254089355469e-06,
+      "cosine_min": 0.9999998807907104,
+      "relative_l2_max": 2.07348307412758e-06,
+      "n_samples": 20
+    },
+    {
+      "backend": "trt_fp32_tf32_disabled_strict",
+      "feature_idx": 3,
+      "max_abs_max": 0.0008983612060546875,
+      "mean_abs_mean": 5.498594850905647e-06,
+      "p95_abs_max": 1.537799835205078e-05,
+      "cosine_min": 0.9999998807907104,
+      "relative_l2_max": 3.5734792618313804e-06,
+      "n_samples": 20
+    }
+  ],
+  "conclusions": [
+    "disable_tf32 deepest-feature relative_l2_max changed from 0.00380168 to 3.57348e-06.",
+    "disable_tf32 deepest-feature cosine_min changed from 0.999993145 to 0.999999881.",
+    "disable_tf32 median latency changed from 7.0073 ms to 13.3797 ms.",
+    "TF32 root-cause hypothesis supported in this audit.",
+    "stronger FP32 constraints deepest-feature relative_l2_max = 3.57348e-06, cosine_min = 0.999999881.",
+    "Stop here. Do not enter full-stage drop-in from this audit."
+  ]
+}

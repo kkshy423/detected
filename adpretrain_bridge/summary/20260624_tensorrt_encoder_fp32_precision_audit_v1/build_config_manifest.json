@@ -1,0 +1,121 @@
+{
+  "task_name": "20260624_tensorrt_encoder_fp32_precision_audit_v1",
+  "sample_count": 20,
+  "sample_paths": [
+    "val/good/1_746.bmp",
+    "val/good/1_764.bmp",
+    "val/good/1_768.bmp",
+    "val/good/1_771.bmp",
+    "val/good/1_784.bmp",
+    "val/good/1_807.bmp",
+    "val/good/1_833.bmp",
+    "val/good/1_838.bmp",
+    "val/good/1_845.bmp",
+    "val/good/1_848.bmp",
+    "test/defect/2_58.bmp",
+    "test/defect/2_62.bmp",
+    "test/defect/2_63.bmp",
+    "test/defect/2_65.bmp",
+    "test/defect/2_72.bmp",
+    "test/defect/2_74.bmp",
+    "test/defect/2_80.bmp",
+    "test/defect/2_81.bmp",
+    "test/defect/2_84.bmp",
+    "test/defect/2_89.bmp"
+  ],
+  "onnx_meta": {
+    "onnx_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/onnx/dinov2_large_encoder_multiscale_b1_224.onnx",
+    "output_names": [
+      "feat_0",
+      "feat_1",
+      "feat_2",
+      "feat_3"
+    ],
+    "output_shapes": [
+      [
+        1,
+        1024,
+        16,
+        16
+      ],
+      [
+        1,
+        1024,
+        16,
+        16
+      ],
+      [
+        1,
+        1024,
+        16,
+        16
+      ],
+      [
+        1,
+        1024,
+        16,
+        16
+      ]
+    ]
+  },
+  "engines": [
+    {
+      "variant": "trt_fp32_default",
+      "disable_tf32_requested": false,
+      "strong_fp32_constraints_requested": false,
+      "builder": "tensorrt_python",
+      "tf32_default_before_edit": true,
+      "strong_fp32_constraints_applied": false,
+      "strong_fp32_constraint_flags": [],
+      "flags_after_edit": [
+        "TF32"
+      ],
+      "tf32_enabled_after_edit": true,
+      "returncode": 0,
+      "elapsed_s": 50.098482286557555,
+      "engine_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/engines/trt_fp32_default.engine",
+      "log_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/logs/trt_fp32_default.log",
+      "engine_exists": true,
+      "engine_size_bytes": 1219133236
+    },
+    {
+      "variant": "trt_fp32_tf32_disabled",
+      "disable_tf32_requested": true,
+      "strong_fp32_constraints_requested": false,
+      "builder": "tensorrt_python",
+      "tf32_default_before_edit": true,
+      "strong_fp32_constraints_applied": false,
+      "strong_fp32_constraint_flags": [],
+      "flags_after_edit": [],
+      "tf32_enabled_after_edit": false,
+      "returncode": 0,
+      "elapsed_s": 36.88773902691901,
+      "engine_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/engines/trt_fp32_tf32_disabled.engine",
+      "log_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/logs/trt_fp32_tf32_disabled.log",
+      "engine_exists": true,
+      "engine_size_bytes": 1219338452
+    },
+    {
+      "variant": "trt_fp32_tf32_disabled_strict",
+      "disable_tf32_requested": true,
+      "strong_fp32_constraints_requested": true,
+      "builder": "tensorrt_python",
+      "tf32_default_before_edit": true,
+      "strong_fp32_constraints_applied": true,
+      "strong_fp32_constraint_flags": [
+        "OBEY_PRECISION_CONSTRAINTS",
+        "STRICT_TYPES"
+      ],
+      "flags_after_edit": [
+        "OBEY_PRECISION_CONSTRAINTS"
+      ],
+      "tf32_enabled_after_edit": false,
+      "returncode": 0,
+      "elapsed_s": 39.67139180749655,
+      "engine_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/engines/trt_fp32_tf32_disabled_strict.engine",
+      "log_path": "runs/20260624_tensorrt_encoder_fp32_precision_audit_v1/logs/trt_fp32_tf32_disabled_strict.log",
+      "engine_exists": true,
+      "engine_size_bytes": 1219338452
+    }
+  ]
+}
