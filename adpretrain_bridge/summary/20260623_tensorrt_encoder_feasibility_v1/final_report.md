@@ -80,3 +80,20 @@ Per experiment rule, no dependencies were installed or modified.
 - Runs: `runs/20260623_tensorrt_encoder_feasibility_v1/`
 - Heavy artifacts: none produced.
 - No ONNX or TensorRT engine was generated.
+
+## 2026-06-24 install attempt update
+
+A minimal pip install was attempted in the existing conda environment:
+
+- onnx==1.17.0
+- 	ensorrt==8.6.0
+- protobuf==5.29.6
+
+Outcome:
+
+- ONNX is now importable.
+- TensorRT Python is installed but still not usable: import fails with libcudnn.so.8: cannot open shared object file.
+- 	rtexec is still unavailable.
+- The main environment uses cuDNN 9 through the existing PyTorch 2.4.1+cu121 stack, so downgrading cuDNN inside this environment is not recommended.
+
+Decision: do not continue TensorRT installation inside the main ADP/AHL environment. Use a separate TensorRT probe environment if this line is pursued further.
