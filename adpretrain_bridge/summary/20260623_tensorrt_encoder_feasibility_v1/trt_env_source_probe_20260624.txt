@@ -1,0 +1,16 @@
+--- timestamp ---
+Wed Jun 24 13:44:38 CST 2026
+--- trtexec path ---
+--- system candidates ---
+--- pip index onnx ---
+WARNING: pip index is currently an experimental command. It may be removed/changed in a future release without prior warning.
+onnx (1.17.0)
+Available versions: 1.17.0, 1.16.2, 1.16.1, 1.16.0, 1.15.0, 1.14.1, 1.14.0, 1.13.1, 1.13.0, 1.12.0, 1.11.0, 1.10.2, 1.10.1, 1.10.0, 1.9.0, 1.8.1, 1.8.0, 1.7.0, 1.6.0, 1.5.0, 1.4.1, 1.4.0, 1.3.0, 1.2.3, 1.2.2, 1.2.1, 1.1.2, 1.1.1, 1.1.0, 1.0.1, 1.0.0, 0.2.1, 0.2, 0.1
+--- pip index tensorrt ---
+WARNING: pip index is currently an experimental command. It may be removed/changed in a future release without prior warning.
+tensorrt (11.1.0.106)
+Available versions: 11.1.0.106, 11.0.0.114, 10.16.1.11, 10.16.0.72, 10.15.1.29, 10.14.1.48.post1, 10.14.1.48, 10.13.3.9.post1, 10.13.3.9, 10.13.2.6, 10.13.0.35, 10.12.0.36, 10.11.0.33, 10.10.0.31, 10.9.0.34, 10.8.0.43, 10.7.0.post1, 10.7.0, 10.6.0.post2, 10.6.0.post1, 10.6.0, 10.5.0, 10.4.0, 10.3.0, 10.2.0.post1, 10.2.0, 10.1.0, 10.0.1, 8.6.1.post1, 8.6.1, 8.6.0, 8.5.3.1, 8.5.2.2, 8.5.1.7
+--- pip index tensorrt-cu12 ---
+WARNING: pip index is currently an experimental command. It may be removed/changed in a future release without prior warning.
+tensorrt-cu12 (11.1.0.106)
+Available versions: 11.1.0.106, 11.0.0.114, 10.16.1.11, 10.16.0.72, 10.15.1.29, 10.14.1.48.post1, 10.14.1.48, 10.13.3.9.post1, 10.13.3.9, 10.13.2.6, 10.13.0.35, 10.12.0.36, 10.11.0.33, 10.10.0.31, 10.9.0.34, 10.8.0.43, 10.7.0.post1, 10.7.0, 10.6.0.post2, 10.6.0.post1, 10.6.0, 10.5.0, 10.4.0, 10.3.0, 10.2.0.post1, 10.2.0, 10.1.0, 10.0.1

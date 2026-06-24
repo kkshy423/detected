@@ -1,0 +1,35 @@
+{
+  "onnx_path": "runs/20260623_tensorrt_encoder_feasibility_v1/onnx/dinov2_large_encoder_multiscale_b1_224.onnx",
+  "output_names": [
+    "feat_0",
+    "feat_1",
+    "feat_2",
+    "feat_3"
+  ],
+  "output_shapes": [
+    [
+      1,
+      1024,
+      16,
+      16
+    ],
+    [
+      1,
+      1024,
+      16,
+      16
+    ],
+    [
+      1,
+      1024,
+      16,
+      16
+    ],
+    [
+      1,
+      1024,
+      16,
+      16
+    ]
+  ]
+}

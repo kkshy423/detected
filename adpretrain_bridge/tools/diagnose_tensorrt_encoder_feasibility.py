@@ -191,8 +191,72 @@ def trtexec_build(trtexec: str, onnx_path: Path, engine_path: Path, log_path: Pa
     log_path.write_text(proc.stdout, encoding="utf-8", errors="replace")
     return {
         "precision": "FP16" if fp16 else "FP32",
+        "builder": "trtexec",
         "cmd": cmd,
         "returncode": proc.returncode,
+        "elapsed_s": elapsed,
+        "engine_path": str(engine_path),
+        "log_path": str(log_path),
+        "engine_exists": engine_path.exists(),
+        "engine_size_bytes": engine_path.stat().st_size if engine_path.exists() else 0,
+    }
+
+
+def trt_python_build(onnx_path: Path, engine_path: Path, log_path: Path, fp16: bool) -> Dict:
+    import tensorrt as trt
+
+    engine_path.parent.mkdir(parents=True, exist_ok=True)
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    log_lines: List[str] = []
+
+    class Recorder(trt.ILogger):
+        def __init__(self):
+            trt.ILogger.__init__(self)
+
+        def log(self, severity, msg):
+            log_lines.append(f"[{severity}] {msg}")
+
+    logger = Recorder()
+    t0 = time.perf_counter()
+    try:
+        builder = trt.Builder(logger)
+        network_flags = 1 << int(trt.NetworkDefinitionCreationFlag.EXPLICIT_BATCH)
+        network = builder.create_network(network_flags)
+        parser = trt.OnnxParser(network, logger)
+        ok = parser.parse(onnx_path.read_bytes())
+        for idx in range(parser.num_errors):
+            log_lines.append(str(parser.get_error(idx)))
+        if not ok:
+            raise RuntimeError("TensorRT ONNX parser failed")
+
+        config = builder.create_builder_config()
+        if hasattr(config, "set_memory_pool_limit"):
+            config.set_memory_pool_limit(trt.MemoryPoolType.WORKSPACE, 4 * 1024 * 1024 * 1024)
+        else:
+            config.max_workspace_size = 4 * 1024 * 1024 * 1024
+        if fp16:
+            config.set_flag(trt.BuilderFlag.FP16)
+
+        if hasattr(builder, "build_serialized_network"):
+            serialized = builder.build_serialized_network(network, config)
+            if serialized is None:
+                raise RuntimeError("TensorRT build_serialized_network returned None")
+            engine_path.write_bytes(bytes(serialized))
+        else:
+            engine = builder.build_engine(network, config)
+            if engine is None:
+                raise RuntimeError("TensorRT build_engine returned None")
+            engine_path.write_bytes(engine.serialize())
+        returncode = 0
+    except Exception as exc:
+        log_lines.append(f"ERROR: {exc!r}")
+        returncode = 1
+    elapsed = time.perf_counter() - t0
+    log_path.write_text("\n".join(log_lines) + "\n", encoding="utf-8", errors="replace")
+    return {
+        "precision": "FP16" if fp16 else "FP32",
+        "builder": "tensorrt_python",
+        "returncode": returncode,
         "elapsed_s": elapsed,
         "engine_path": str(engine_path),
         "log_path": str(log_path),
@@ -263,6 +327,24 @@ def get_tensor_shape(engine, name: str):
     return tuple(int(x) for x in engine.get_binding_shape(name))
 
 
+def get_tensor_dtype(trt, engine, name: str):
+    if hasattr(engine, "get_tensor_dtype"):
+        dtype = engine.get_tensor_dtype(name)
+    else:
+        dtype = engine.get_binding_dtype(name)
+    if dtype == trt.DataType.FLOAT:
+        return torch.float32
+    if dtype == trt.DataType.HALF:
+        return torch.float16
+    if dtype == trt.DataType.INT32:
+        return torch.int32
+    if hasattr(trt.DataType, "INT8") and dtype == trt.DataType.INT8:
+        return torch.int8
+    if hasattr(trt.DataType, "BOOL") and dtype == trt.DataType.BOOL:
+        return torch.bool
+    raise RuntimeError(f"unsupported TensorRT output dtype for {name}: {dtype}")
+
+
 class TrtRunner:
     def __init__(self, engine_path: Path, output_shapes: Sequence[Sequence[int]], device: torch.device):
         self.trt, self.engine, self.context = load_trt_engine(engine_path)
@@ -277,9 +359,10 @@ class TrtRunner:
         if self.input_name is None:
             raise RuntimeError("TensorRT engine has no input tensor")
         self.output_names.sort()
-        self.output_tensors = [
-            torch.empty(tuple(shape), device=device, dtype=torch.float32) for shape in output_shapes
-        ]
+        self.output_tensors = []
+        for name, shape in zip(self.output_names, output_shapes):
+            dtype = get_tensor_dtype(self.trt, self.engine, name)
+            self.output_tensors.append(torch.empty(tuple(shape), device=device, dtype=dtype))
 
     def __call__(self, x: torch.Tensor) -> List[torch.Tensor]:
         if hasattr(self.context, "set_tensor_address"):
@@ -467,10 +550,11 @@ def main() -> int:
     args.summary_root.mkdir(parents=True, exist_ok=True)
     args.runs_root.mkdir(parents=True, exist_ok=True)
 
+    torch.manual_seed(args.seed)
+    torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
     env = collect_env(args.summary_root)
     missing: List[str] = []
-    if not env.get("trtexec_path"):
-        missing.append("trtexec executable not found on PATH")
     if env.get("tensorrt_python") is None:
         missing.append("TensorRT Python package not importable")
     if env.get("onnx_python") is None:
@@ -481,9 +565,6 @@ def main() -> int:
         write_missing_report(args.summary_root, missing, env)
         return 0
 
-    torch.manual_seed(args.seed)
-    torch.backends.cuda.matmul.allow_tf32 = False
-    torch.backends.cudnn.allow_tf32 = False
     device = torch.device(args.device)
     add_adpretrain_to_path(str(args.adpretrain_root))
     encoder = make_encoder(args.backbone, str(args.adpretrain_root), device)
@@ -493,22 +574,38 @@ def main() -> int:
     export_meta = export_onnx(wrapper, onnx_path, device)
     write_json(args.summary_root / "onnx_export_meta.json", export_meta)
 
-    trtexec = str(env["trtexec_path"])
+    trtexec = env.get("trtexec_path")
+    build_fn = "trtexec" if trtexec else "tensorrt_python"
     build_results: Dict[str, Dict] = {}
-    build_results["FP32"] = trtexec_build(
-        trtexec,
-        onnx_path,
-        args.runs_root / "engines" / "dinov2_large_encoder_fp32.engine",
-        args.runs_root / "logs" / "trtexec_fp32_build.log",
-        fp16=False,
-    )
-    build_results["FP16"] = trtexec_build(
-        trtexec,
-        onnx_path,
-        args.runs_root / "engines" / "dinov2_large_encoder_fp16.engine",
-        args.runs_root / "logs" / "trtexec_fp16_build.log",
-        fp16=True,
-    )
+    if trtexec:
+        build_results["FP32"] = trtexec_build(
+            str(trtexec),
+            onnx_path,
+            args.runs_root / "engines" / "dinov2_large_encoder_fp32.engine",
+            args.runs_root / "logs" / "trtexec_fp32_build.log",
+            fp16=False,
+        )
+        build_results["FP16"] = trtexec_build(
+            str(trtexec),
+            onnx_path,
+            args.runs_root / "engines" / "dinov2_large_encoder_fp16.engine",
+            args.runs_root / "logs" / "trtexec_fp16_build.log",
+            fp16=True,
+        )
+    else:
+        build_results["FP32"] = trt_python_build(
+            onnx_path,
+            args.runs_root / "engines" / "dinov2_large_encoder_fp32.engine",
+            args.runs_root / "logs" / "tensorrt_python_fp32_build.log",
+            fp16=False,
+        )
+        build_results["FP16"] = trt_python_build(
+            onnx_path,
+            args.runs_root / "engines" / "dinov2_large_encoder_fp16.engine",
+            args.runs_root / "logs" / "tensorrt_python_fp16_build.log",
+            fp16=True,
+        )
+    build_results["builder_selected"] = {"builder": build_fn, "trtexec_path": trtexec}
     write_json(args.summary_root / "trt_build_results.json", build_results)
 
     latency_rows: List[Dict] = []
@@ -542,6 +639,7 @@ def main() -> int:
     conclusions.append("ONNX export succeeded." if onnx_path.exists() else "ONNX export failed.")
     conclusions.append("FP32 engine build succeeded." if fp32_ok else "FP32 engine build failed; do not proceed.")
     conclusions.append("FP16 engine build succeeded." if fp16_ok else "FP16 engine build failed; do not use FP16.")
+    fp32_equiv = False
     if fp32_ok:
         fp32_rows = [r for r in diff_summary if r["backend"] == "trt_fp32"]
         fp32_equiv = bool(fp32_rows) and max(r["relative_l2_max"] for r in fp32_rows) < 1e-3 and min(r["cosine_min"] for r in fp32_rows) > 0.999
@@ -557,7 +655,7 @@ def main() -> int:
             conclusions.append(f"FP16 median latency speedup vs PyTorch encoder: {speedup:.3f}x.")
             conclusions.append(
                 "Recommend next-round encoder drop-in full-stage diagnostic."
-                if fp32_ok and speedup > 1.05
+                if fp32_ok and fp32_equiv and speedup > 1.05
                 else "Do not proceed to full-stage drop-in yet unless build/equivalence/latency issues are resolved."
             )
     report = {

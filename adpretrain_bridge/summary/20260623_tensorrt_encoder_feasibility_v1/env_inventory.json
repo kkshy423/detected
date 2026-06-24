@@ -1,6 +1,6 @@
 {
   "task_name": "20260623_tensorrt_encoder_feasibility_v1",
-  "python": "/gdata1/huangjd/miniconda3/envs/adpretrain_ahl_bridge/bin/python",
+  "python": "/gdata1/huangjd/miniconda3/envs/adpretrain_trt_probe/bin/python",
   "platform": "Linux-3.10.0-1160.119.1.el7.x86_64-x86_64-with-glibc2.17",
   "cwd": "/ghome/huangjd/code/detected/adpretrain_bridge",
   "torch": "2.4.1+cu121",
@@ -8,14 +8,14 @@
   "torch_cudnn": 90100,
   "torchvision": "0.19.1+cu121",
   "pillow": "10.4.0",
-  "tensorrt_python": null,
-  "onnx_python": null,
+  "tensorrt_python": "8.6.0",
+  "onnx_python": "1.17.0",
   "onnxruntime_python": null,
   "trtexec_path": null,
   "nvcc_path": "/usr/local/cuda/bin/nvcc",
   "tf32": {
     "matmul_allow_tf32": false,
-    "cudnn_allow_tf32": true
+    "cudnn_allow_tf32": false
   },
   "cuda_visible_devices": null,
   "nvidia_smi": {
@@ -23,7 +23,7 @@
       "nvidia-smi"
     ],
     "returncode": 0,
-    "stdout": "Tue Jun 23 10:45:53 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 550.90.07              Driver Version: 550.90.07      CUDA Version: 12.4     |\n|-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA A40                     On  |   00000000:2A:00.0 Off |                    0 |\n|  0%   53C    P0            124W /  300W |   42709MiB /  46068MiB |     76%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n                                                                                         \n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n+-----------------------------------------------------------------------------------------+",
+    "stdout": "Wed Jun 24 07:51:09 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 550.90.07              Driver Version: 550.90.07      CUDA Version: 12.4     |\n|-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA A40                     On  |   00000000:17:00.0 Off |                    0 |\n|  0%   26C    P8             38W /  300W |       1MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n                                                                                         \n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+",
     "stderr": ""
   },
   "nvcc_version": {

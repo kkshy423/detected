@@ -1,0 +1,152 @@
+{
+  "runs_root": "runs/20260623_tensorrt_encoder_feasibility_v1",
+  "onnx_export_success": true,
+  "build": {
+    "FP32": {
+      "precision": "FP32",
+      "builder": "tensorrt_python",
+      "returncode": 0,
+      "elapsed_s": 50.10696813929826,
+      "engine_path": "runs/20260623_tensorrt_encoder_feasibility_v1/engines/dinov2_large_encoder_fp32.engine",
+      "log_path": "runs/20260623_tensorrt_encoder_feasibility_v1/logs/tensorrt_python_fp32_build.log",
+      "engine_exists": true,
+      "engine_size_bytes": 1219133236
+    },
+    "FP16": {
+      "precision": "FP16",
+      "builder": "tensorrt_python",
+      "returncode": 0,
+      "elapsed_s": 85.91458682436496,
+      "engine_path": "runs/20260623_tensorrt_encoder_feasibility_v1/engines/dinov2_large_encoder_fp16.engine",
+      "log_path": "runs/20260623_tensorrt_encoder_feasibility_v1/logs/tensorrt_python_fp16_build.log",
+      "engine_exists": true,
+      "engine_size_bytes": 610478260
+    },
+    "builder_selected": {
+      "builder": "tensorrt_python",
+      "trtexec_path": null
+    }
+  },
+  "latency_rows": [
+    {
+      "backend": "pytorch",
+      "warmup": 20,
+      "timed": 100,
+      "median_ms": 18.289361614733934,
+      "mean_ms": 18.25748723000288,
+      "p95_ms": 18.477337434887886,
+      "min_ms": 18.016419373452663,
+      "max_ms": 18.535560928285122
+    },
+    {
+      "backend": "trt_fp32",
+      "warmup": 20,
+      "timed": 100,
+      "median_ms": 7.008376531302929,
+      "mean_ms": 7.022860245779157,
+      "p95_ms": 7.026268262416124,
+      "min_ms": 6.9682402536273,
+      "max_ms": 8.447824977338314
+    },
+    {
+      "backend": "trt_fp16",
+      "warmup": 20,
+      "timed": 100,
+      "median_ms": 3.8948077708482742,
+      "mean_ms": 3.911727061495185,
+      "p95_ms": 3.9057052694261074,
+      "min_ms": 3.879023715853691,
+      "max_ms": 5.6151775643229485
+    }
+  ],
+  "diff_summary": [
+    {
+      "backend": "trt_fp16",
+      "feature_idx": 0,
+      "max_abs_max": 0.01679360866546631,
+      "mean_abs_mean": 0.00037436391721712425,
+      "p95_abs_max": 0.0010053727310150862,
+      "cosine_min": 0.9999836683273315,
+      "relative_l2_max": 0.0057509723119437695,
+      "n_samples": 4
+    },
+    {
+      "backend": "trt_fp16",
+      "feature_idx": 1,
+      "max_abs_max": 0.022212624549865723,
+      "mean_abs_mean": 0.0005258791497908533,
+      "p95_abs_max": 0.0013348109787330031,
+      "cosine_min": 0.9999624490737915,
+      "relative_l2_max": 0.008664729073643684,
+      "n_samples": 4
+    },
+    {
+      "backend": "trt_fp16",
+      "feature_idx": 2,
+      "max_abs_max": 0.45029449462890625,
+      "mean_abs_mean": 0.002233008563052863,
+      "p95_abs_max": 0.00573530700057745,
+      "cosine_min": 0.9999685287475586,
+      "relative_l2_max": 0.007941757328808308,
+      "n_samples": 4
+    },
+    {
+      "backend": "trt_fp16",
+      "feature_idx": 3,
+      "max_abs_max": 5.275054931640625,
+      "mean_abs_mean": 0.02329537784680724,
+      "p95_abs_max": 0.06348400563001633,
+      "cosine_min": 0.9999082088470459,
+      "relative_l2_max": 0.013553104363381863,
+      "n_samples": 4
+    },
+    {
+      "backend": "trt_fp32",
+      "feature_idx": 0,
+      "max_abs_max": 0.0016262084245681763,
+      "mean_abs_mean": 9.743079317559022e-05,
+      "p95_abs_max": 0.0002664579078555107,
+      "cosine_min": 0.9999989867210388,
+      "relative_l2_max": 0.0014673892874270678,
+      "n_samples": 4
+    },
+    {
+      "backend": "trt_fp32",
+      "feature_idx": 1,
+      "max_abs_max": 0.0024678707122802734,
+      "mean_abs_mean": 0.00013394219422480091,
+      "p95_abs_max": 0.0003413856029510498,
+      "cosine_min": 0.9999979734420776,
+      "relative_l2_max": 0.0020780940540134907,
+      "n_samples": 4
+    },
+    {
+      "backend": "trt_fp32",
+      "feature_idx": 2,
+      "max_abs_max": 0.049350738525390625,
+      "mean_abs_mean": 0.0006677664641756564,
+      "p95_abs_max": 0.001829338725656271,
+      "cosine_min": 0.9999976754188538,
+      "relative_l2_max": 0.002217987785115838,
+      "n_samples": 4
+    },
+    {
+      "backend": "trt_fp32",
+      "feature_idx": 3,
+      "max_abs_max": 0.38576507568359375,
+      "mean_abs_mean": 0.007946870988234878,
+      "p95_abs_max": 0.02121628075838089,
+      "cosine_min": 0.9999921321868896,
+      "relative_l2_max": 0.004193844739347696,
+      "n_samples": 4
+    }
+  ],
+  "conclusions": [
+    "ONNX export succeeded.",
+    "FP32 engine build succeeded.",
+    "FP16 engine build succeeded.",
+    "FP32 feature diff is not clearly equivalent; inspect feature_diff_summary.csv before any drop-in work.",
+    "FP16 median latency speedup vs PyTorch encoder: 4.696x.",
+    "Do not proceed to full-stage drop-in yet unless build/equivalence/latency issues are resolved."
+  ]
+}

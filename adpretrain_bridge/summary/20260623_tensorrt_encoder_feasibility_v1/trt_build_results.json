@@ -1,0 +1,26 @@
+{
+  "FP32": {
+    "precision": "FP32",
+    "builder": "tensorrt_python",
+    "returncode": 0,
+    "elapsed_s": 50.10696813929826,
+    "engine_path": "runs/20260623_tensorrt_encoder_feasibility_v1/engines/dinov2_large_encoder_fp32.engine",
+    "log_path": "runs/20260623_tensorrt_encoder_feasibility_v1/logs/tensorrt_python_fp32_build.log",
+    "engine_exists": true,
+    "engine_size_bytes": 1219133236
+  },
+  "FP16": {
+    "precision": "FP16",
+    "builder": "tensorrt_python",
+    "returncode": 0,
+    "elapsed_s": 85.91458682436496,
+    "engine_path": "runs/20260623_tensorrt_encoder_feasibility_v1/engines/dinov2_large_encoder_fp16.engine",
+    "log_path": "runs/20260623_tensorrt_encoder_feasibility_v1/logs/tensorrt_python_fp16_build.log",
+    "engine_exists": true,
+    "engine_size_bytes": 610478260
+  },
+  "builder_selected": {
+    "builder": "tensorrt_python",
+    "trtexec_path": null
+  }
+}
